@@ -426,6 +426,9 @@ textarea {
 .navbar {
     background-color: #333;
     overflow: hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
 }
 
 /* Style the links inside the navigation bar */
@@ -489,6 +492,46 @@ footer{
     font: bold 15px verdana;
     width: 100%;
     padding: 15px 0;
+}
+
+.full-image-section{
+	width: 100vw;
+	height: 100vh;
+	display:  -webkit-box;
+	display:  -ms-flexbox;
+	display:  flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: row wrap;
+	        flex-flow: row wrap;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-ms-flex-line-pack: center;
+	    align-content: center;
+	color: gray;
+
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: center;
+    background-attachment: fixed;
+}
+
+@media screen and (max-width: 1080px) {
+	.full-image-section{
+		background-size: auto 100%;
+	}
+}
+
+#home{
+	background-image:url('../../assets/images/erik-cid-224163.jpg');
+}
+
+#trekking-a-cavallo{
+	background-image:url('../../assets/images/greta-scholderle-moller-109089.jpg');
 }
 
 
