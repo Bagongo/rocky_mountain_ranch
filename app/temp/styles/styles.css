@@ -531,6 +531,12 @@ footer{
 	}
 }
 
+@media screen and (max-width: 600px){
+	.full-image-section{
+	    background-attachment: fixed;
+	}
+}
+
 #home{
 	background-image:url('../../assets/images/erik-cid-224163.jpg');
 }
@@ -553,6 +559,7 @@ footer{
 }
 
 .descriptive-section__text-box{
+  position: relative;
   width:  50%;
   height: 100%;
   display: -webkit-box;
@@ -572,6 +579,7 @@ footer{
 
 .descriptive-section__text-box h1{
   width: 100%;
+  margin: 0;
   padding: 1em 0.5em;
   text-align: right;
   background-color: black;

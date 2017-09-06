@@ -18,3 +18,9 @@
 		background-size: auto 100%;
 	}
 }
+
+@media screen and (max-width: 600px){
+	.full-image-section{
+	    background-attachment: fixed;
+	}
+}
