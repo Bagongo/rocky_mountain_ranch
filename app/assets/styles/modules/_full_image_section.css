@@ -1,11 +1,8 @@
 .full-image-section{
-	width: 100vw;
-	height: 100vh;
 	display:  flex;
 	flex-flow: row wrap;
 	justify-content: center;
 	align-items: center;
-	align-content: center;
 	color: gray;
 	background-repeat: no-repeat;
 	background-size: 100% auto;

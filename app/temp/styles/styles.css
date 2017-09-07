@@ -500,9 +500,82 @@ footer{
     padding: 15px 0;
 }
 
-.full-image-section{
+.section{
 	width: 100vw;
 	height: 100vh;
+}
+
+.descriptive-section{
+	overflow: hidden;
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 1fr 1fr;
+	    grid-template-columns: 1fr 1fr;
+}
+
+.descriptive-section__text-box{
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 2em;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.descriptive-section__text-box h1{
+  margin: 0;
+  padding: 1em;
+  text-align: right;
+  background-color: black;
+  color: white;
+}
+
+.descriptive-section__text-box div{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2em;
+}
+
+.descriptive-section__image{
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center center;
+}
+
+@media screen and (max-width: 568px){
+
+	.descriptive-section{
+		-ms-grid-columns: 1fr;
+		    grid-template-columns: 1fr;
+		-ms-grid-rows: 1fr 2fr;
+		    grid-template-rows: 1fr 2fr;
+		grid-gap: 10px;
+		-ms-flex-line-pack: stretch;
+		    align-content: stretch;
+	}
+
+	.descriptive-section__text-box{
+    -ms-grid-rows: 1fr auto;
+        grid-template-rows: 1fr auto;
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
+    font-size: .8em;
+  }
+
+	.descriptive-section__image{
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+}
+
+.full-image-section{
 	display:  -webkit-box;
 	display:  -ms-flexbox;
 	display:  flex;
@@ -516,8 +589,6 @@ footer{
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
-	-ms-flex-line-pack: center;
-	    align-content: center;
 	color: gray;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
@@ -543,62 +614,6 @@ footer{
 
 #trekking-a-cavallo{
 	background-image:url('../../assets/images/greta-scholderle-moller-109089.jpg');
-}
-
-.descriptive-section{
-	width: 100vw;
-	height: 100vh;
-	overflow: hidden;
-	display: -ms-grid;
-	display: grid;
-	-ms-grid-columns: 1fr 1fr;
-	    grid-template-columns: 1fr 1fr;
-}
-
-.descriptive-section__text-box{
-  display: -ms-grid;
-  display: grid;
-  -ms-flex-line-pack: center;
-      align-content: center;
-}
-
-.descriptive-section__text-box h1{
-  margin: 0;
-  padding: 1em;
-  text-align: right;
-  background-color: black;
-  color: white;
-}
-
-.descriptive-section__text-box p{
-  padding: 2em;
-}
-
-.descriptive-section__image{
-  right: -1000px;
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-  background-position: center center;
-}
-
-@media screen and (max-width: 600px){
-
-	.descriptive-section{
-		-ms-grid-columns: 1fr;
-		    grid-template-columns: 1fr;
-		-ms-grid-rows: 1fr 1fr;
-		    grid-template-rows: 1fr 1fr;
-	}
-
-	.descriptive-section__text-box{
-    font-size: .8em;
-  }
-
-	.descriptive-section__image{
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-  }
-
 }
 
 #pony-game{
