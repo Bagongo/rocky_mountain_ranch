@@ -1,0 +1,30 @@
+#istruttori{
+	display: grid;
+	grid-template-rows: 1fr 4fr;
+	grid-template-columns: 1fr 1fr;
+
+	.section-title{
+		grid-column: 1 / span 2;
+
+		h1{
+			margin: 0;
+			padding: 1em;
+			text-align: center;
+			background-color: black;
+			color:  white;
+		}
+	}
+
+	.istruttore{
+		justify-self: stretch;
+		display:  flex;
+		flex-flow: column;
+		justify-content: space-around;
+		align-items: center;
+
+		&__element{
+			margin: 0;
+		}
+	}		
+
+}

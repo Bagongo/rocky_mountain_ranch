@@ -17,6 +17,7 @@
 		}
 
 		div{
+			overflow: scroll;
 			display: flex;
 			align-items: center;
 			padding: 2em;

@@ -9,10 +9,3 @@ $(window).on("resize", function(){
 	$("body").css("margin-top", Math.round(topnavH));
 });
 
-// function logSectionsHeight(){
-// 	$(".section").each(function() {	
-// 		var id = $(this).attr("id");
-// 		var height = $(this).height();
-// 		console.log(id + ": " + height);	
-// 	});
-// }
