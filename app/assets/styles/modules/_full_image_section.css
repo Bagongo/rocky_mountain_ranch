@@ -16,7 +16,7 @@
 	}
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 568px){
 	.full-image-section{
 	    background-attachment: scroll;
 	}

@@ -34,7 +34,7 @@
 
   <div class="section descriptive-section" id="il-maneggio">
       <div class="descriptive-section__text-box">
-        <h1>Il maneggio</h1>
+        <h1 class="section-title">Il maneggio</h1>
         <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores cupiditate sunt vitae totam assumenda, dignissimos, dolore magnam tempora dolorem necessitatibus adipisci incidunt quasi quisquam eaque quaerat, repellat eum provident consectetur enim. Corporis, sapiente .</div>
       </div>
       <div class="descriptive-section__image" style="background-image: url(assets/images/ranch-cavalli-1.jpg"></div>
@@ -49,21 +49,25 @@
       <h1>Gli istruttori</h1>
     </div>
     <div class="istruttore">
-        <figure class="istruttore__element">
-          <img src="assets/images/user-blank.png" alt='missing' />
-        </figure>
-        <h3 class="istruttore__element">Paola</h3>
+        <h2 class="istruttore__element">Paola</h2>
+        <picture class="istruttore__element">
+          <source srcset="assets/images/blank-user.png" media="(max-width: 500px)">
+          <source srcset="assets/images/user-blank.png" />
+          <img srcset="assets/images/user-blank.png" alt='missing'>
+        </picture>
         <p class="istruttore__element">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore accusamus, quidem commodi itaque, aperiam cumque doloremque iste eaque illum laudantium, quam distinctio in soluta ex.</p>
     </div>
-    <div class="istruttore">
-        <figure class="istruttore__element">
-          <img src="assets/images/user-blank.png" alt='missing' />
-        </figure>
-        <h3 class="istruttore__element">Patrick</h3>
+    <div class="istruttore istruttore--reverse">
+        <h2 class="istruttore__element">Patrick</h2>
+        <picture class="istruttore__element">
+          <source srcset="assets/images/blank-user.png" media="(max-width: 500px)">
+          <source srcset="assets/images/user-blank.png" />
+          <img srcset="assets/images/user-blank.png" alt='missing'>
+        </picture>
         <p class="istruttore__element">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore qui ducimus maiores eum, reiciendis impedit at distinctio necessitatibus quod praesentium nam quasi. Iste esse cum earum culpa aliquam accusamus ipsa quia deleniti nisi porro ipsam, error quaerat itaque voluptatem, dolor autem blanditiis fugiat illum recusandae!</p>
     </div>
   </div>
-   
+
   <!-- <footer>P.iva and other links here....</footer> -->
 
   <script type="text/javascript" src="assets/js/init_sizes.js"></script>

@@ -9,5 +9,13 @@ html, body{
 	height: 100%;
 }
 
+.section-title{
+	margin: 0;
+	padding: 1em;
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+
 
 

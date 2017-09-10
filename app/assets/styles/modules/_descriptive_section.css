@@ -8,12 +8,8 @@
 		grid-gap: 2em;
 		align-content: center;
 
-		h1{
-			margin: 0;
-			padding: 1em;
+		.section-title{
 			text-align: right;
-			background-color: black;
-			color: white;
 		}
 
 		div{

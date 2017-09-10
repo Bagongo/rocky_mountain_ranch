@@ -3,28 +3,46 @@
 	grid-template-rows: 1fr 4fr;
 	grid-template-columns: 1fr 1fr;
 
-	.section-title{
-		grid-column: 1 / span 2;
+	@mixin atSmall{
+		grid-template-rows: 1fr 4fr 4fr;
+		grid-template-columns: 1fr;	
+		grid-gap: 1em;
+		font-size: .8em;
+	}
 
-		h1{
-			margin: 0;
-			padding: 1em;
-			text-align: center;
-			background-color: black;
-			color:  white;
+	.section-title{
+		grid-column: 1 / span 2;		
+
+		@mixin atSmall{
+			grid-column: 1 / 1;	
 		}
 	}
 
 	.istruttore{
-		justify-self: stretch;
 		display:  flex;
 		flex-flow: column;
-		justify-content: space-around;
+		justify-content: start;
 		align-items: center;
+		padding: .5em 2em;
 
 		&__element{
 			margin: 0;
 		}
-	}		
+
+		h2{
+			margin: 1em 0;
+		}
+
+		p{
+			text-align: center;
+			margin-top:  2em;
+		}
+
+		@mixin atSmall{
+			picture{order: 1;}
+			h2{order: 2; margin: 0;}
+			p{order: 3;}
+		}
+	}
 
 }

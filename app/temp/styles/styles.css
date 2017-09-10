@@ -432,6 +432,14 @@ html, body{
 	height: 100%;
 }
 
+.section-title{
+	margin: 0;
+	padding: 1em;
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+
 /* Add a black background color to the top navigation */
 
 .navbar {
@@ -526,12 +534,8 @@ footer{
       align-content: center;
 }
 
-.descriptive-section__text-box h1{
-  margin: 0;
-  padding: 1em;
+.descriptive-section__text-box .section-title{
   text-align: right;
-  background-color: black;
-  color: white;
 }
 
 .descriptive-section__text-box div{
@@ -608,7 +612,7 @@ footer{
 	}
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 568px){
 	.full-image-section{
 	    background-attachment: scroll;
 	}
@@ -632,8 +636,20 @@ footer{
 	-ms-grid-rows: 1fr 4fr;
 	    grid-template-rows: 1fr 4fr;
 	-ms-grid-columns: 1fr 1fr;
-	    grid-template-columns: 1fr 1fr;		
+	    grid-template-columns: 1fr 1fr;
 
+}
+
+@media (max-width: 500px) {
+
+  #istruttori {
+    -ms-grid-rows: 1fr 4fr 4fr;
+        grid-template-rows: 1fr 4fr 4fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-gap: 1em;
+    font-size: .8em;
+  }
 }
 
 #istruttori .section-title{
@@ -642,16 +658,14 @@ footer{
       grid-column: 1 / span 2;
 }
 
-#istruttori .section-title h1{
-  margin: 0;
-  padding: 1em;
-  text-align: center;
-  background-color: black;
-  color:  white;
+@media (max-width: 500px) {
+
+  #istruttori .section-title {
+    grid-column: 1 / 1;
+  }
 }
 
 #istruttori .istruttore{
-  justify-self: stretch;
   display:  -webkit-box;
   display:  -ms-flexbox;
   display:  flex;
@@ -659,15 +673,48 @@ footer{
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: .5em 2em;
 }
 
 #istruttori .istruttore__element{
   margin: 0;
+}
+
+#istruttori .istruttore h2{
+  margin: 1em 0;
+}
+
+#istruttori .istruttore p{
+  text-align: center;
+  margin-top:  2em;
+}
+
+@media (max-width: 500px) {
+
+  #istruttori .istruttore picture {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+
+  #istruttori .istruttore h2 {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin: 0;
+  }
+
+  #istruttori .istruttore p {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
 }
 
 
