@@ -647,7 +647,7 @@ footer{
         grid-template-rows: 1fr 4fr 4fr;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    grid-gap: 1em;
+    grid-gap: 2em;
     font-size: .8em;
   }
 }
@@ -697,6 +697,12 @@ footer{
 
 @media (max-width: 500px) {
 
+  #istruttori .istruttore {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
   #istruttori .istruttore picture {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
@@ -707,14 +713,19 @@ footer{
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
-    margin: 0;
+    margin: .5em 0;
   }
 
   #istruttori .istruttore p {
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
             order: 3;
+    margin: 0;
   }
+}
+
+#lavoro-in-piano{
+	background-image: url('../../assets/images/ranch-cavalli-2.jpg');
 }
 
 
