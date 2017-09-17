@@ -21,3 +21,19 @@
 	    background-attachment: scroll;
 	}
 }
+
+#home{
+	background-image:url('/assets/images/erik-cid-224163.jpg');
+}
+
+#pony-game{
+	background-image:url('/assets/images/filipe-dos-santos-mendes-195654.jpg');
+}
+
+#trekking-a-cavallo{
+	background-image:url('/assets/images/greta-scholderle-moller-109089.jpg');
+}
+
+#lavoro-in-piano{
+	background-image: url('/assets/images/ranch-cavalli-2.jpg');
+}

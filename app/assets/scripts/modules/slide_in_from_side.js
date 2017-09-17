@@ -7,12 +7,15 @@ $(document).on("scroll", function(){
 	scrollDir = scrollTop > lastScrollTop ? "down" : "up";
 	lastScrollTop = scrollTop;
 
-	if(scrollTop >= $("#istruttori").position().top && scrollDir === "down")
+	var upperThreshold = $("#istruttori").position().top - $("#istruttori").height()/2; 
+	var lowerThreshold = $("#istruttori").position().top + $("#istruttori").height()/2; 
+
+	if(scrollTop >= upperThreshold && scrollDir === "down")
 	{
         pullInFromSide($(".istruttore").eq(0), "margin-left", 10);
         pullInFromSide($(".istruttore").eq(1), "margin-right", 10);
     }
-    else if(scrollTop <= $("#istruttori").position().top && scrollDir === "up")
+    else if(scrollTop <= lowerThreshold && scrollDir === "up")
     {
     	pushOutFromSide($(".istruttore").eq(0), "margin-left", 10);
         pushOutFromSide($(".istruttore").eq(1), "margin-right", 10);
