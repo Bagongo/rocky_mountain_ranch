@@ -4,26 +4,20 @@
 	justify-content: center;
 	align-items: center;
 	color: gray;
-	background-repeat: no-repeat;
-	background-size: 100% auto;
-	background-position: center center;
-    background-attachment: fixed;
-}
 
-@media screen and (max-width: 1080px){
-	.full-image-section{
-		background-size: auto 100%;
-	}
-}
+    &__content{
+    	position: relative;
+    	max-width:  75%;
+    	max-height: 75%;
+    	display: flex;
+    	flex-flow: column;
+    	align-items: center;
+    	justify-content: center;
 
-@media screen and (max-width: 568px){
-	.full-image-section{
-	    background-attachment: scroll;
-	}
-}
-
-#home{
-	background-image:url('/assets/images/erik-cid-224163.jpg');
+    	&__textbox{
+    		background-color: rgba(0, 0, 0, .5);
+    	}
+    }
 }
 
 #pony-game{

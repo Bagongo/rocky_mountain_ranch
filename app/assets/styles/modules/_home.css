@@ -1,3 +1,107 @@
-#home{
+.home-section{
+	display: flex;
+	justify-content: center;
+	background-image:url('/assets/images/staple_wall--large.jpg');
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
 
+	@mixin atMedium{
+		background-size: 100% auto;
+	}
+
+	&__content{			
+		display: flex;
+		flex-flow:  column;
+		align-items: center;
+		justify-content: center;
+		padding: 0 20px;
+
+		&__title > h1{
+			font-size: 1.2rem;
+			color: #FFCD00;
+			align-self: flex-start;
+			text-shadow: 2px 2px 4px black;
+			opacity: .9;
+
+			@mixin atSmall{
+				justify-content: flex-start;
+				font-size: 2.5rem;
+			}
+
+			@mixin atMedium{
+				font-size: 3rem;
+			}
+
+			@mixin atLarge{
+				font-size: 4rem;
+			}
+		}
+
+		&__textbox{
+			position: relative;
+			width: 100%;
+			height: auto;
+			display: flex;
+			flex-flow: column;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			border-radius: 2px;
+			text-align: center;
+			text-shadow: 2px 2px 4px black;
+
+			@mixin atMedium{
+				width: 500px;
+				color: black;
+				margin-top: 80px;
+				text-align: left;
+				background-color: rgba(255, 255, 255, 0.9);
+				text-shadow: none;
+				box-shadow: 1px 1px 4px black;
+			}
+
+
+			.home-logo{
+				position: relative;
+
+				@mixin atMedium{
+					position: absolute;
+					top: 50%;
+					left: 0;
+					transform: translate(-50%, -90%);
+				}
+								
+			}
+
+			.home-logo > img{
+				width: 150px;
+				height: auto;
+
+				@mixin atSmall{
+					width: 150px;
+				}
+
+				@mixin atMedium{
+					width: 175px;
+				}
+
+				@mixin atLarge{
+					width: 200px;
+				}
+			}
+
+			p{
+				padding: 20px;
+				font-size: 1.2rem;
+
+				@mixin atMedium{
+					padding-left: 105px;
+					padding-right: 20px;
+				}
+			}
+		}
+
+	}	
+	
 }
