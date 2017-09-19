@@ -10375,20 +10375,48 @@ $(".navbar-toggle").on("click", function (event) {
 "use strict";
 
 
-var parallaxSpeed = .1;
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-$(".parallax-fx").each(function () {
-	var $section = $(this);
-	var $content = $(this).find(".section__content");
-	//make sure the parallax acts on a layout already set 
-	//by forcing resize and scroll before triggering the effect
-	$(window).trigger('resize').trigger('scroll');
-	$(window).scroll(function () {
-		var newPos = -($(window).scrollTop() - $section.position().top) * parallaxSpeed;
-		$section.css("background-position", "center " + newPos + "px");
-		$content.css("top", -newPos + "px");
-	});
-});
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var ParallaxSection = function () {
+	function ParallaxSection(sectionID, bgSpeed, contentSpeed) {
+		_classCallCheck(this, ParallaxSection);
+
+		this.section = $(sectionID);
+		this.content = this.section.find(".full-image-section__content");
+		this.bgSpeed = bgSpeed;
+		this.contentSpeed = contentSpeed;
+
+		if (this.validate) this.events();
+	}
+
+	_createClass(ParallaxSection, [{
+		key: "validate",
+		value: function validate() {
+			return this.section.hasClass("parallax-fx");
+		}
+	}, {
+		key: "events",
+		value: function events() {
+			//make sure the parallax acts on a layout already set 
+			//by forcing resize and scroll before triggering the effect
+			$(window).trigger('resize').trigger('scroll');
+			$(window).scroll(this.triggerParallax.bind(this));
+		}
+	}, {
+		key: "triggerParallax",
+		value: function triggerParallax() {
+			var newPos = $(window).scrollTop() - this.section.position().top;
+			this.section.css("background-position", "center " + newPos * this.bgSpeed + "px");
+			this.content.css("top", +newPos * this.contentSpeed + "px");
+		}
+	}]);
+
+	return ParallaxSection;
+}();
+
+new ParallaxSection("#trekking-a-cavallo", 0, 0.5);
 
 /***/ }),
 /* 5 */
