@@ -440,6 +440,11 @@ html, body{
 	color: white;
 }
 
+.hilighted-text{
+	color: #FF7A23;
+	font-weight: 800;
+}
+
 /* Add a black background color to the top navigation */
 
 .navbar {
@@ -601,42 +606,45 @@ footer{
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
-	color: gray;
+	color: #FFF;
 }
 
 .full-image-section__content{
   position: relative;
-  max-width:  75%;
-  max-height: 75%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.full-image-section__content__textbox{
+  width: 100%;
+  padding: 20px;
   background-color: rgba(0, 0, 0, .5);
 }
 
-#pony-game{
-	background-image:url('/assets/images/filipe-dos-santos-mendes-195654.jpg');
+@media (min-width: 800px) {
+
+  .full-image-section__content {
+    width: 700px;
+    max-height: 500px;
+    border-radius: 5px;
+    font-size: 1.1em;
+  }
 }
 
-#trekking-a-cavallo{
-	background-image:url('/assets/images/greta-scholderle-moller-109089.jpg');
+.full-image-section__content__title{
+  display: inline;
+  color: #FF7A23;
 }
 
-#lavoro-in-piano{
-	background-image: url('/assets/images/ranch-cavalli-2.jpg');
+.full-image-section__content__title--yellow{
+  color: #FFF30B;
+}
+
+.full-image-section__content__text{
+  display: inline;
+}
+
+.full-image-section__content__text span{
+  color: #FD9A20;
+}
+
+.full-image-section__content__text--yellow span{
+  color: #FFF919;
 }
 
 .parallax-fx{
@@ -698,7 +706,7 @@ footer{
 
 .home-section__content__title > h1{
   font-size: 1.2rem;
-  color: #FFCD00;
+  color: #FFF30B;
   -ms-flex-item-align: start;
       align-self: flex-start;
   text-shadow: 2px 2px 4px black;
@@ -811,12 +819,25 @@ footer{
   font-size: 1.2rem;
 }
 
+.home-section__content__textbox p span{
+  color: #FF7A23;
+  font-weight: 700;
+}
+
 @media (min-width: 800px) {
 
   .home-section__content__textbox p {
     padding-left: 105px;
     padding-right: 20px;
   }
+}
+
+#trekking-a-cavallo{
+	background-image:url('/assets/images/trekking_a_cavallo_01-large.jpg');
+}
+
+#pony-game{
+	background-image:url('/assets/images/filipe-dos-santos-mendes-195654.jpg');
 }
 
 #istruttori{
@@ -902,6 +923,10 @@ footer{
   #istruttori .istruttore--reverse {
     margin: 0;
   }
+}
+
+#lavoro-in-piano{
+	background-image: url('/assets/images/ranch-cavalli-2.jpg');
 }
 
 

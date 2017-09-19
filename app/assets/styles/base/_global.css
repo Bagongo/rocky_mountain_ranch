@@ -17,5 +17,10 @@ html, body{
 	color: white;
 }
 
+.hilighted-text{
+	color: $orangy;
+	font-weight: 800;
+}
+
 
 

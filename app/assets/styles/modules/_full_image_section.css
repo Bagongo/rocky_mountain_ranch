@@ -3,31 +3,42 @@
 	flex-flow: row wrap;
 	justify-content: center;
 	align-items: center;
-	color: gray;
+	color: #FFF;
 
     &__content{
-    	position: relative;
-    	max-width:  75%;
-    	max-height: 75%;
-    	display: flex;
-    	flex-flow: column;
-    	align-items: center;
-    	justify-content: center;
+        position: relative;
+    	width: 100%;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, .5);
 
-    	&__textbox{
-    		background-color: rgba(0, 0, 0, .5);
-    	}
+        @mixin atMedium{
+            width:  700px;
+            max-height: 500px;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+    	
+    	&__title{
+            display: inline;
+            color: $orangy;
+        }
+
+        &__title--yellow{
+            color: $yellowy;
+        }
+
+        &__text{
+            display: inline;
+
+            span{
+                color: $orangy-lighter;
+            }
+        }
+
+        &__text--yellow{
+            span{
+                color: $yellowy-lighter;
+            }
+        }
     }
-}
-
-#pony-game{
-	background-image:url('/assets/images/filipe-dos-santos-mendes-195654.jpg');
-}
-
-#trekking-a-cavallo{
-	background-image:url('/assets/images/greta-scholderle-moller-109089.jpg');
-}
-
-#lavoro-in-piano{
-	background-image: url('/assets/images/ranch-cavalli-2.jpg');
 }

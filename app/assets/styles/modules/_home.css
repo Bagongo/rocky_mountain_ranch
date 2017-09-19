@@ -19,7 +19,7 @@
 
 		&__title > h1{
 			font-size: 1.2rem;
-			color: #FFCD00;
+			color: $yellowy;
 			align-self: flex-start;
 			text-shadow: 2px 2px 4px black;
 			opacity: .9;
@@ -94,6 +94,11 @@
 			p{
 				padding: 20px;
 				font-size: 1.2rem;
+
+				span{
+					color: $orangy;
+					font-weight: 700;
+				}
 
 				@mixin atMedium{
 					padding-left: 105px;
