@@ -10410,6 +10410,8 @@ var ParallaxSection = function () {
 			var newPos = $(window).scrollTop() - this.section.position().top;
 			this.section.css("background-position", "center " + newPos * this.bgSpeed + "px");
 			this.content.css("top", +newPos * this.contentSpeed + "px");
+
+			if (newPos > -50 && newPos < 50) this.content.addClass('hilighted');else this.content.removeClass("hilighted");
 		}
 	}]);
 

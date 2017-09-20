@@ -613,7 +613,12 @@ footer{
   position: relative;
   width: 100%;
   padding: 20px;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, .3);
+  transition: background-color 1s ease-in-out;
+}
+
+.full-image-section__content.hilighted{
+  background-color: rgba(0, 0, 0, .7);
 }
 
 @media (min-width: 800px) {
