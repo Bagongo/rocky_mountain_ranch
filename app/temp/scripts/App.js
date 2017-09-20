@@ -10416,8 +10416,8 @@ var ParallaxSection = function () {
 	return ParallaxSection;
 }();
 
-new ParallaxSection("#trekking-a-cavallo", -0.1, -1.5);
-new ParallaxSection("#pony-game", -0.1, -1);
+new ParallaxSection("#trekking-a-cavallo", -0.1, 1.5);
+new ParallaxSection("#pony-game", 0.2, -.5);
 new ParallaxSection("#lavoro-in-piano", 0, 0.5);
 
 /***/ }),
@@ -10427,44 +10427,48 @@ new ParallaxSection("#lavoro-in-piano", 0, 0.5);
 "use strict";
 
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 var lastScrollTop = 0;
-var scrollDir;
 
-$(document).on("scroll", function () {
-	var scrollTop = $(this).scrollTop();
-	// determine scroll direction
-	scrollDir = scrollTop > lastScrollTop ? "down" : "up";
-	lastScrollTop = scrollTop;
+var slideInElement = function () {
+	function slideInElement(element, side, speed) {
+		_classCallCheck(this, slideInElement);
 
-	var upperThreshold = $("#istruttori").position().top - $("#istruttori").height() / 2;
-	var lowerThreshold = $("#istruttori").position().top + $("#istruttori").height() / 2;
+		this.element = element;
+		this.margin = "margin-" + side;
+		this.section = this.element.closest(".section");
 
-	if (scrollTop >= upperThreshold && scrollDir === "down") {
-		pullInFromSide($(".istruttore").eq(0), "margin-left", 10);
-		pullInFromSide($(".istruttore").eq(1), "margin-right", 10);
-	} else if (scrollTop <= lowerThreshold && scrollDir === "up") {
-		pushOutFromSide($(".istruttore").eq(0), "margin-left", 10);
-		pushOutFromSide($(".istruttore").eq(1), "margin-right", 10);
+		this.events();
 	}
-});
 
-function pullInFromSide(element, margin, speed) {
-	var elementMargin = parseInt(element.css(margin));
+	_createClass(slideInElement, [{
+		key: "events",
+		value: function events() {
+			$(window).scroll(this.triggerSlide.bind(this));
+		}
+	}, {
+		key: "triggerSlide",
+		value: function triggerSlide() {
+			if ($(window).width() < 800) {
+				this.element.css("margin", 0);
+				return;
+			}
 
-	if (elementMargin < 0) {
-		elementMargin += Math.abs(elementMargin) < speed ? 1 : speed;
-		element.css(margin, elementMargin + "px");
-	}
-}
+			var newPos = parseInt($(window).scrollTop() - this.section.position().top);
+			var elementMargin = parseInt(this.element.css(this.margin));
 
-function pushOutFromSide(element, margin, speed) {
-	var elementMargin = parseInt(element.css(margin));
+			if (newPos < 0) this.element.css(this.margin, newPos + "px");else this.element.css(this.margin, -newPos + "px");
+		}
+	}]);
 
-	if (elementMargin > -parseInt($("#istruttori").css("width")) / 2) {
-		elementMargin -= speed;
-		element.css(margin, elementMargin + "px");
-	}
-}
+	return slideInElement;
+}();
+
+new slideInElement($(".istruttore").eq(0), "left", 10);
+new slideInElement($(".istruttore").eq(1), "right", 10);
 
 /***/ })
 /******/ ]);

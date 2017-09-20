@@ -1,19 +1,27 @@
 #istruttori{
 	width: 100%;
-
-	@mixin atSmall{
-		font-size: .8em;
-	}
+	font-size: .8em;
 
 	.istruttore{
-		width: 50%;
-		float: left;
+		width: 100%;
+		height: 50%;
+		float: none;
 		display:  flex;
 		flex-flow: column;
-		justify-content: start;
+		justify-content: flex-start;
 		align-items: center;
-		margin: 0 0 0 -50vw;
-		padding: .5em 2em;
+		align-content: center;
+		margin: 0;
+		padding: 0 2em;
+
+		@mixin atMedium{
+			width: 50%;
+			height: 100%;
+			float: left;
+			padding: 50px 75px;
+			font-size: 1.2em;
+
+		}	
 
 		&__element{
 			margin: 0;
@@ -25,25 +33,14 @@
 
 		p{
 			text-align: center;
-			margin-top:  2em;
+			margin-top:  1em;
 		}
-
-		@mixin atSmall{
-			width: 100%;
-			margin: 0;
-
-			picture{order: 1;}
-			h2{order: 2; margin: .5em 0;}
-			p{order: 3; margin: 0;}
-		}	
 	}
 
 	.istruttore--reverse{
-		float: right;
-		margin: 0 -50vw 0 0;
 
-		@mixin atSmall{
-			margin: 0;
+		@mixin atMedium{
+			float: right;
 		}
 	}
 
