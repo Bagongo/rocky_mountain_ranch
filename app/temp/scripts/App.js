@@ -10408,7 +10408,9 @@ var ParallaxSection = function () {
 		key: "triggerParallax",
 		value: function triggerParallax() {
 			var newPos = $(window).scrollTop() - this.section.position().top;
-			this.section.css("background-position", "center " + newPos * this.bgSpeed + "px");
+
+			if ($(window).width() >= 800) this.section.css("background-position", "center " + newPos * this.bgSpeed + "px");
+
 			this.content.css("top", +newPos * this.contentSpeed + "px");
 		}
 	}]);
@@ -10417,7 +10419,7 @@ var ParallaxSection = function () {
 }();
 
 new ParallaxSection("#trekking-a-cavallo", -0.1, 1.5);
-new ParallaxSection("#pony-game", 0.2, -.5);
+new ParallaxSection("#pony-game", 0.05, -.5);
 new ParallaxSection("#lavoro-in-piano", 0, 0.5);
 
 /***/ }),

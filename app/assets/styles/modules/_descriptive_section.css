@@ -1,12 +1,25 @@
 .descriptive-section{
 	overflow: hidden;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 2fr;
+
+	@mixin atMedium{
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr 1fr;
+	}
 
 	&__text-box{
-		display: grid;
-		grid-gap: 2em;
-		align-content: center;
+		display: flex;
+		flex-flow: column;
+		justify-content: flex-start;
+		align-items: stretch;
+		font-size: .8rem;
+		
+		@mixin atMedium{
+			justify-content: center;
+			font-size: 1.1rem;
+		}
 
 		.section-title{
 			text-align: right;
@@ -14,8 +27,7 @@
 
 		div{
 			overflow: scroll;
-			display: flex;
-			align-items: center;
+			text-align: left;
 			padding: 2em;
 		}
 	}
@@ -24,28 +36,6 @@
 		background-repeat: no-repeat;
 		background-size: auto 100%;
 		background-position: center center;
-	}
-}
-
-@media screen and (max-width: 568px){
-
-	.descriptive-section{
-		grid-template-columns: 1fr;
-		grid-template-rows: 1fr 2fr;
-		grid-gap: 10px;
-		align-content: stretch;
-
-		&__text-box{
-			grid-template-rows: 1fr auto;
-			align-content: stretch;
-			align-self: start;
-			font-size: .8em;
-		}
-
-		&__image{
-			background-repeat: no-repeat;
-			background-size: 100%;
-		}
 	}
 
 }

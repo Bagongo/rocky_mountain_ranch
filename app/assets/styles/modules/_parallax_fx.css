@@ -1,18 +1,7 @@
 .parallax-fx{
-	background-repeat: no-repeat;
-	background-size: 100% auto;
-	background-position: center center;
-    background-attachment: fixed;
-}
+    background-attachment: scroll;
 
-@media screen and (max-width: 1080px){
-	.full-image-section{
-		background-size: auto 100%;
-	}
-}
-
-@media screen and (max-width: 568px){
-	.full-image-section{
-	    background-attachment: scroll;
-	}
+    @mixin atMedium{
+	    background-attachment: fixed;
+    }
 }

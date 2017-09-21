@@ -4,6 +4,13 @@
 	justify-content: center;
 	align-items: center;
 	color: #FFF;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto 110%;
+
+    @mixin atMedium{
+        background-size: 100% auto;
+    }
 
     &__content{
         position: relative;
@@ -32,6 +39,7 @@
 
             span{
                 color: $orangy-lighter;
+                font-weight: 800;
             }
         }
 
