@@ -15,3 +15,15 @@
     @mixin-content;
   }
 }
+
+@define-mixin atShort {
+  @media (max-height: 500px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin atTall {
+  @media (max-height: 800px) {
+    @mixin-content;
+  }
+}

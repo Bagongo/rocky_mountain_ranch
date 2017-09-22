@@ -1,6 +1,21 @@
-#istruttori{
-	width: 100%;
+#instructors{
+	width: 100vw;
+	height: auto;
+	min-height: 100vh;
+	overflow: hidden;
 	font-size: .8em;
+
+	.istruttori{
+		padding-bottom: 2rem;
+
+		@mixin atMedium{
+			height: 500px;	
+			background-image: url('/assets/images/rocky_mountain_ranch--logo.png');
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: auto;
+		}		
+	}
 
 	.istruttore{
 		width: 100%;
@@ -18,9 +33,8 @@
 			width: 50%;
 			height: 100%;
 			float: left;
-			padding: 50px 75px;
+			padding: 100px 75px;
 			font-size: 1.2em;
-
 		}	
 
 		&__element{
@@ -42,6 +56,11 @@
 		@mixin atMedium{
 			float: right;
 		}
+	}
+
+	img{
+		max-width: 200px;
+		border-radius: 20px;
 	}
 
 }

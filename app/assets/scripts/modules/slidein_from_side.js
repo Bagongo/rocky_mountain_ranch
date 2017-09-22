@@ -2,10 +2,10 @@ var lastScrollTop = 0;
 
 class slideInElement{
 
-	constructor(element, side, speed){
+	constructor(element, parent, side, speed){
 		this.element = element;
 		this.margin = "margin-" + side;
-		this.section = this.element.closest(".section");
+		this.parent = parent;
 
 		this.events();
 	}
@@ -23,7 +23,7 @@ class slideInElement{
 			return;
 		}
 
-		var newPos = parseInt($(window).scrollTop() - this.section.position().top);
+		var newPos = parseInt($(window).scrollTop() - this.parent.position().top);
 		var elementMargin = parseInt(this.element.css(this.margin));
 
 		if(newPos < 0)
@@ -35,6 +35,6 @@ class slideInElement{
 
 }
 
-new slideInElement($(".istruttore").eq(0), "left", 10);
-new slideInElement($(".istruttore").eq(1), "right", 10);
+new slideInElement($(".istruttore").eq(0), $("#instructors"), "left", 10);
+new slideInElement($(".istruttore").eq(1), $("#instructors"), "right", 10);
 

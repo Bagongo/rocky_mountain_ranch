@@ -10419,8 +10419,8 @@ var ParallaxSection = function () {
 }();
 
 new ParallaxSection("#trekking-a-cavallo", -0.1, 1.5);
-new ParallaxSection("#pony-game", 0.05, -.5);
-new ParallaxSection("#lavoro-in-piano", 0, 0.5);
+new ParallaxSection("#pony-game", 0.05, -1);
+new ParallaxSection("#lavoro-in-piano", -0.1, 1.2);
 
 /***/ }),
 /* 5 */
@@ -10436,12 +10436,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var lastScrollTop = 0;
 
 var slideInElement = function () {
-	function slideInElement(element, side, speed) {
+	function slideInElement(element, parent, side, speed) {
 		_classCallCheck(this, slideInElement);
 
 		this.element = element;
 		this.margin = "margin-" + side;
-		this.section = this.element.closest(".section");
+		this.parent = parent;
 
 		this.events();
 	}
@@ -10459,7 +10459,7 @@ var slideInElement = function () {
 				return;
 			}
 
-			var newPos = parseInt($(window).scrollTop() - this.section.position().top);
+			var newPos = parseInt($(window).scrollTop() - this.parent.position().top);
 			var elementMargin = parseInt(this.element.css(this.margin));
 
 			if (newPos < 0) this.element.css(this.margin, newPos + "px");else this.element.css(this.margin, -newPos + "px");
@@ -10469,8 +10469,8 @@ var slideInElement = function () {
 	return slideInElement;
 }();
 
-new slideInElement($(".istruttore").eq(0), "left", 10);
-new slideInElement($(".istruttore").eq(1), "right", 10);
+new slideInElement($(".istruttore").eq(0), $("#instructors"), "left", 10);
+new slideInElement($(".istruttore").eq(1), $("#instructors"), "right", 10);
 
 /***/ })
 /******/ ]);
