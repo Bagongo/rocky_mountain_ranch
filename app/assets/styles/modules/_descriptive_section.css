@@ -1,22 +1,27 @@
 .descriptive-section{
-	overflow: hidden;
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 1fr 2fr;
+	display: flex;
+	flex-flow: column;
+	background-image:url('/assets/images/plank-lighter--1200x800.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
 
 	@mixin atMedium{
-		grid-template-rows: 1fr;
-		grid-template-columns: 1fr 1fr;
+		flex-flow: row;
 	}
 
 	&__text-box{
+		height: 50%;
+		width: 100%;
 		display: flex;
 		flex-flow: column;
-		justify-content: flex-start;
-		align-items: stretch;
+		justify-content: stretch;
 		font-size: .8rem;
 		
 		@mixin atMedium{
+			height: 100%;
+			width: 50%;
+			grid-column: 2;
 			justify-content: center;
 			font-size: 1.1rem;
 		}
@@ -26,16 +31,60 @@
 		}
 
 		div{
+			flex-grow: 1;
+			display: flex;
+			align-items: center;
 			overflow: scroll;
-			text-align: left;
-			padding: 2em;
+			text-align: center;
+			padding: 0 1rem;
+			font-size: 1rem;
+			color: white;
+			text-shadow: 2px 2px 4px black;
+
+			@mixin atMedium{
+				flex-grow: 0;
+				padding: 2em;
+				font-size: 1.2rem;
+				text-align: left;
+			}
 		}
 	}
 
+	&__text-box--reverse{
+		
+		@mixin atMedium{
+			order: 2;
+		}
+
+		.section-title{
+			text-align: left;
+		}
+	}
+
+
 	&__image{
+		height: 50%;
+		width: 100%;
+		border-top:  10px solid black;
 		background-repeat: no-repeat;
-		background-size: auto 100%;
+		background-size: cover;
 		background-position: center center;
+
+		@mixin atMedium{
+			height: 100%;
+			width: 50%;
+			border-top: none;
+			border-left:  15px solid black;
+		}
+	}
+
+	&__image--reverse{
+		
+		@mixin atMedium{
+			order: 1;
+			border-left:  none;
+			border-right: 15px solid black;
+		}
 	}
 
 }

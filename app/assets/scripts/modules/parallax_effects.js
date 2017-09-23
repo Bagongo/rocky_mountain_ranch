@@ -6,13 +6,7 @@ class ParallaxSection{
 		this.bgSpeed = bgSpeed;
 		this.contentSpeed = contentSpeed;
 
-		if(this.validate)
-			this.events();
-	}
-
-	validate()
-	{
-		return this.section.hasClass("parallax-fx");
+		this.events();
 	}
 
 	events()

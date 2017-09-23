@@ -10347,12 +10347,16 @@ return jQuery;
 $(window).on("resize", function () {
 	var windowH = $(window).height();
 	var topnavH = $("#topnav").height();
-
 	var newSectionH = windowH - topnavH;
-	newSectionH += Math.ceil(newSectionH / 100);
-	$(".section").css("height", newSectionH + "px");
 
+	newSectionH += Math.ceil(newSectionH / 100);
+
+	$(".section").css("height", newSectionH + "px");
 	$("body").css("margin-top", Math.round(topnavH));
+
+	$(".full-image-section").each(function () {
+		$(this).css("background-position", "center center");
+	});
 });
 
 /***/ }),
@@ -10388,16 +10392,11 @@ var ParallaxSection = function () {
 		this.bgSpeed = bgSpeed;
 		this.contentSpeed = contentSpeed;
 
-		if (this.validate) this.events();
+		this.events();
 	}
 
 	_createClass(ParallaxSection, [{
-		key: "validate",
-		value: function validate() {
-			return this.section.hasClass("parallax-fx");
-		}
-	}, {
-		key: "events",
+		key: 'events',
 		value: function events() {
 			//make sure the parallax acts on a layout already set 
 			//by forcing resize and scroll before triggering the effect
@@ -10405,7 +10404,7 @@ var ParallaxSection = function () {
 			$(window).scroll(this.triggerParallax.bind(this));
 		}
 	}, {
-		key: "triggerParallax",
+		key: 'triggerParallax',
 		value: function triggerParallax() {
 			var newPos = $(window).scrollTop() - this.section.position().top;
 

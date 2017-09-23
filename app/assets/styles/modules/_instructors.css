@@ -3,13 +3,19 @@
 	height: auto;
 	min-height: 100vh;
 	overflow: hidden;
-	font-size: .8em;
+	font-size: .8rem;
+
+	background-image:url('/assets/images/staple_wall--large.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
 
 	.istruttori{
 		padding-bottom: 2rem;
 
 		@mixin atMedium{
 			height: 500px;	
+			font-size: .9rem;
 			background-image: url('/assets/images/rocky_mountain_ranch--logo.png');
 			background-repeat: no-repeat;
 			background-position: center center;
@@ -28,12 +34,14 @@
 		align-content: center;
 		margin: 0;
 		padding: 0 2em;
+		color: white;
+		text-shadow: 2px 2px 4px black;
 
 		@mixin atMedium{
 			width: 50%;
 			height: 100%;
 			float: left;
-			padding: 100px 75px;
+			padding: 50px 75px 100px 75px;
 			font-size: 1.2em;
 		}	
 
@@ -46,8 +54,19 @@
 		}
 
 		p{
+			margin-top: 1rem;
 			text-align: center;
-			margin-top:  1em;
+
+			@mixin atMedium{
+				width: 300px;
+				padding: 15px;
+				text-align: left;
+				color: black;
+				text-shadow: none;
+				background-color: rgba(255, 255, 255, 0.9);
+				text-shadow: none;
+				box-shadow: 1px 1px 4px black;
+			}
 		}
 	}
 
@@ -60,7 +79,7 @@
 
 	img{
 		max-width: 200px;
-		border-radius: 20px;
+		box-shadow: 0 1px 4px black;
 	}
 
 }

@@ -6,15 +6,7 @@
 	color: #FFF;
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: auto 110%;
-
-    @mixin atMedium{
-        background-size: 100% auto;
-    }
-
-    @mixin atTall{
-        background-size: cover;
-    }
+    background-size: cover;
 
     &__content{
         position: relative;
