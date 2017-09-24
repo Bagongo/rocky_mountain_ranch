@@ -432,17 +432,21 @@ html, body{
 	height: 100%;
 }
 
+a{
+	text-decoration: underline;
+	color: #FD9A20;
+}
+
+a:hover{
+	color: #FF7A23;
+}
+
 .section-title{
 	margin: 0;
 	padding: 1em;
 	text-align: center;
 	background-color: black;
 	color: white;
-}
-
-.hilighted-text{
-	color: #FF7A23;
-	font-weight: 800;
 }
 
 /* Add a black background color to the top navigation */
@@ -1076,6 +1080,140 @@ footer{
 #lavoro-in-piano{
 	background-image: url('/assets/images/ranch-cavalli-2.jpg');
 }
+
+.contacts-section{
+
+	height: auto;
+	min-height: 500px;
+	background-image:url('/assets/images/staple_wall--large.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.contacts-section__title{
+  margin: 0;
+  padding: 1.5rem;
+  color: white;
+  font-size: 1.6rem;
+  text-align: center;
+  background: black;
+}
+
+.contacts-section__content{
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient:  vertical;
+  -webkit-box-direction:  normal;
+      -ms-flex-flow:  column;
+          flex-flow:  column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1.5rem 0;
+}
+
+.contacts-section__content .closer{
+  margin: 2rem 0;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+}
+
+.contacts-section .contact__card{
+  width: 90%;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5rem 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 1px 1px 4px black;
+}
+
+.contacts-section .contact__card img{
+  width: 150px;
+}
+
+.contacts-section .contact__card ul{
+  list-style: none;
+}
+
+.contacts-section .contact__card ul li{
+  margin: 10px 0;
+}
+
+.contacts-section .contact__card ul li img{
+  width: 75px;
+}
+
+.contacts-section .contact__card ul a{
+  font-weight: 700;
+}
+
+.contacts-section .contact__card .contacts-map{
+  width: 250px;
+  height: 250px;
+  max-width: 90%;
+  border: 10px solid black;
+}
+
+.contacts-section li:nth-child(1) i{
+	-webkit-animation: buzzing 5s ease-in-out 4s infinite;
+	        animation: buzzing 5s ease-in-out 4s infinite; 
+}
+
+.contacts-section li:nth-child(2) i{
+	-webkit-animation: buzzing 5s ease-in-out 8s infinite;
+	        animation: buzzing 5s ease-in-out 8s infinite; 
+}
+
+@-webkit-keyframes buzzing {
+    0% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    1% {-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
+    2% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+	3% {-webkit-transform: rotate(15deg);transform: rotate(15deg);}
+	4% {-webkit-transform: rotate(0);transform: rotate(0);}
+	5% {-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
+    6% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+	7% {-webkit-transform: rotate(15deg);transform: rotate(15deg);}
+	8% {-webkit-transform: rotate(0);transform: rotate(0);}
+	9% {-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
+    10% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+	11% {-webkit-transform: rotate(15deg);transform: rotate(15deg);}
+	12% {-webkit-transform: rotate(0);transform: rotate(0);}	
+	100% {-webkit-transform: rotate(0);transform: rotate(0);}			
+}
+
+@keyframes buzzing {
+    0% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    1% {-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
+    2% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+	3% {-webkit-transform: rotate(15deg);transform: rotate(15deg);}
+	4% {-webkit-transform: rotate(0);transform: rotate(0);}
+	5% {-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
+    6% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+	7% {-webkit-transform: rotate(15deg);transform: rotate(15deg);}
+	8% {-webkit-transform: rotate(0);transform: rotate(0);}
+	9% {-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
+    10% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+	11% {-webkit-transform: rotate(15deg);transform: rotate(15deg);}
+	12% {-webkit-transform: rotate(0);transform: rotate(0);}	
+	100% {-webkit-transform: rotate(0);transform: rotate(0);}			
+}
+
 
 
 

@@ -9,6 +9,15 @@ html, body{
 	height: 100%;
 }
 
+a{
+	text-decoration: underline;
+	color: $orangy-lighter;
+}
+
+a:hover{
+	color: $orangy;
+}
+
 .section-title{
 	margin: 0;
 	padding: 1em;
@@ -17,10 +26,7 @@ html, body{
 	color: white;
 }
 
-.hilighted-text{
-	color: $orangy;
-	font-weight: 800;
-}
+
 
 
 
