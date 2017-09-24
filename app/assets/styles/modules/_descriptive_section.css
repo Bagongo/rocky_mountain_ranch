@@ -47,6 +47,10 @@
 				font-size: 1.2rem;
 				text-align: left;
 			}
+
+			@mixin atTall{
+				font-size: 1.5rem;
+			}
 		}
 	}
 

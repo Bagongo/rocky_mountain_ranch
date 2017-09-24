@@ -10418,8 +10418,8 @@ var ParallaxSection = function () {
 }();
 
 new ParallaxSection("#trekking-a-cavallo", -0.1, 1.5);
-new ParallaxSection("#pony-game", 0.05, -1);
-new ParallaxSection("#lavoro-in-piano", -0.1, 1.2);
+new ParallaxSection("#pony-game", -0.1, 1.5);
+new ParallaxSection("#lavoro-in-piano", 0.1, -1);
 
 /***/ }),
 /* 5 */

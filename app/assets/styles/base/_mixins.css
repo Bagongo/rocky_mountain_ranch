@@ -23,7 +23,7 @@
 }
 
 @define-mixin atTall {
-  @media (max-height: 800px) {
+  @media (min-height: 800px) {
     @mixin-content;
   }
 }

@@ -8,6 +8,14 @@
     background-position: center center;
     background-size: cover;
 
+    @mixin atMedium{
+        background-size: cover;
+    }
+
+    @mixin atTall{
+        background-size: auto 100%;
+    }
+
     &__content{
         position: relative;
     	width: 100%;
