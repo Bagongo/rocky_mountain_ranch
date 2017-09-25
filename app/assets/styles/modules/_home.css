@@ -1,31 +1,48 @@
 .home-section{
-	display: flex;
-	justify-content: center;
-	background-image:url('/assets/images/staple_wall--large.jpg');
+
+	background-image:url('/assets/images/staple_wall--1200x800.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
 
-	&__content{			
+	&__content{		
+		width: 100%;	
+		height: 100%;
 		display: flex;
 		flex-flow:  column;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-around;
 		padding: 0 20px;
 
+		@mixin atMedium{
+			justify-content: center;
+			background-image:url('/assets/images/horseshoe--250x271.png');
+			background-repeat: no-repeat;
+			background-position: 98% 3%;
+			background-size: 200px auto;
+		}
+
+		@mixin atLarge{
+			background-position: 95% 10%;
+			background-size: 250px auto;
+		}
+
 		&__title > h1{
-			font-size: 1.2rem;
-			color: $yellowy;
-			align-self: flex-start;
-			text-shadow: 2px 2px 4px black;
-			opacity: .9;
+			display: none;
+			
 
 			@mixin atSmall{
+				display: block;
 				justify-content: flex-start;
+				color: $yellowy;
 				font-size: 2.5rem;
+				align-self: flex-start;
+				text-shadow: 2px 2px 4px black;
+				opacity: .9;
 			}
 
 			@mixin atMedium{
+				align-self: flex-start;
 				font-size: 3rem;
 			}
 
@@ -49,12 +66,18 @@
 
 			@mixin atMedium{
 				width: 500px;
+				height: auto;
 				color: black;
-				margin-top: 80px;
+				margin-top: 50px;
+				padding: 0.5rem;
 				text-align: left;
 				background-color: rgba(255, 255, 255, 0.9);
 				text-shadow: none;
 				box-shadow: 1px 1px 4px black;
+			}
+
+			@mixin atLarge{
+				padding: 2rem 1rem;
 			}
 
 
@@ -66,8 +89,7 @@
 					top: 50%;
 					left: 0;
 					transform: translate(-50%, -90%);
-				}
-								
+				}							
 			}
 
 			.home-logo > img{
@@ -75,7 +97,7 @@
 				height: auto;
 
 				@mixin atSmall{
-					width: 150px;
+					width: 200px;
 				}
 
 				@mixin atMedium{
@@ -88,6 +110,7 @@
 			}
 
 			p{
+				margin: 0;
 				padding: 20px;
 				font-size: 1.2rem;
 
@@ -96,11 +119,57 @@
 					font-weight: 700;
 				}
 
+				@mixin atSmall{
+					width: 75%;
+				}
+
 				@mixin atMedium{
+					width: 100%;
 					padding-left: 105px;
-					padding-right: 20px;
+					padding-right: 30px;
+					font-size: 1.2rem;
 				}
 			}
+		}
+
+		&__partners{
+			width: 90%;
+			height: 75px;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+
+			@mixin atMedium{
+				width: 100%;
+				margin-top: 2rem;
+				justify-content: flex-end;
+			}
+
+			img{
+				opacity: 0.9;
+
+				@mixin atMedium{
+					margin: 0 20px;
+				}
+			}
+
+			img:nth-of-type(1){
+
+				width: 80px;
+
+				@mixin atSmall{
+					width: 100px;
+				}
+			}
+
+			img:nth-of-type(2){
+
+				height: 70px;
+
+				@mixin atSmall{
+					height: 75px;
+				}
+			}			
 		}
 
 	}	
