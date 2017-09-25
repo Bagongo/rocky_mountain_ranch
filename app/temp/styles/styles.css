@@ -437,10 +437,6 @@ a{
 	color: #FD9A20;
 }
 
-a:hover{
-	color: #FF7A23;
-}
-
 .section-title{
 	margin: 0;
 	padding: 1em;
@@ -1082,13 +1078,19 @@ footer{
 }
 
 .contacts-section{
-
 	height: auto;
-	min-height: 500px;
+	min-height: 700px;
 	background-image:url('/assets/images/staple_wall--large.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-size: cover;
+	background-size: cover;	
+}
+
+@media (min-height: 800px) {
+
+  .contacts-section {
+    min-height: 100vh;
+  }
 }
 
 .contacts-section__title{
@@ -1119,10 +1121,40 @@ footer{
   padding: 1.5rem 0;
 }
 
+@media (min-width: 800px) {
+
+  .contacts-section__content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: space-around;
+        -ms-flex-align: space-around;
+            align-items: space-around;
+    padding: 0 2.5rem ;
+  }
+}
+
+@media (min-height: 800px) {
+
+  .contacts-section__content {
+    margin-top: 10vh;
+  }
+}
+
 .contacts-section__content .closer{
   margin: 2rem 0;
   color: white;
   text-shadow: 2px 2px 4px black;
+}
+
+@media (min-width: 600px) {
+
+  .contacts-section__content .closer {
+    font-size: 2.5rem;
+  }
 }
 
 .contacts-section .contact__card{
@@ -1135,12 +1167,36 @@ footer{
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1.5rem 1rem;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 1px 1px 4px black;
+  padding: 1.5rem 1rem .5rem 1rem;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+}
+
+@media (min-width: 600px) {
+
+  .contacts-section .contact__card {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: auto;
+    height: auto;
+    margin: 2rem 1rem;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: black;
+    text-shadow: none;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 1px 1px 4px black;
+  }
 }
 
 .contacts-section .contact__card img{
@@ -1163,55 +1219,109 @@ footer{
   font-weight: 700;
 }
 
-.contacts-section .contact__card .contacts-map{
-  width: 250px;
+.contacts-section .contact__card ul a:hover{
+  color: #FF7A23;
+}
+
+.contacts-section .contacts-map{
+  width: 80%;
   height: 250px;
-  max-width: 90%;
-  border: 10px solid black;
+  margin-top: 2rem;
+  box-shadow: 1px 1px 4px black;
 }
 
-.contacts-section li:nth-child(1) i{
-	-webkit-animation: buzzing 5s ease-in-out 4s infinite;
-	        animation: buzzing 5s ease-in-out 4s infinite; 
+@media (min-width: 800px) {
+
+  .contacts-section .contacts-map {
+    width: 400px;
+    height: 400px;
+    margin-top: 1rem;
+  }
 }
 
-.contacts-section li:nth-child(2) i{
-	-webkit-animation: buzzing 5s ease-in-out 8s infinite;
-	        animation: buzzing 5s ease-in-out 8s infinite; 
+.contacts-section .closer{
+  width: 100%;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+@media (min-width: 800px) {
+
+  .contacts-section .closer {
+    font-size: 3.5rem;
+  }
+}
+
+.contacts-section li.buzz:hover i{
+	-webkit-animation: buzzing 1s ease-in-out 0s infinite;
+	        animation: buzzing 1s ease-in-out 0s infinite;
+}
+
+.contacts-section li.lift a{
+  margin-left: 20px;
+}
+
+@media (min-width: 800px) {
+
+  .contacts-section li.lift a {
+    margin-left: 22px;
+  }
+}
+
+@media (min-width: 800px) {
+
+  .contacts-section li.lift a {
+    margin-left: 24px;
+  }
+}
+
+.contacts-section li.lift i{
+  position: absolute;
+}
+
+.contacts-section li.lift:hover i{
+  -webkit-animation: lift 1s ease-in-out 0s infinite;
+          animation: lift 1s ease-in-out 0s infinite;
 }
 
 @-webkit-keyframes buzzing {
     0% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
-    1% {-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
-    2% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
-	3% {-webkit-transform: rotate(15deg);transform: rotate(15deg);}
-	4% {-webkit-transform: rotate(0);transform: rotate(0);}
-	5% {-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
-    6% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
-	7% {-webkit-transform: rotate(15deg);transform: rotate(15deg);}
-	8% {-webkit-transform: rotate(0);transform: rotate(0);}
-	9% {-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
+    5% {-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
     10% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
-	11% {-webkit-transform: rotate(15deg);transform: rotate(15deg);}
-	12% {-webkit-transform: rotate(0);transform: rotate(0);}	
+	15% {-webkit-transform: rotate(15deg);transform: rotate(15deg);}
+	20% {-webkit-transform: rotate(0);transform: rotate(0);}
+	25% {-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
+    30% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+	35% {-webkit-transform: rotate(15deg);transform: rotate(15deg);}
+	40% {-webkit-transform: rotate(0);transform: rotate(0);}
 	100% {-webkit-transform: rotate(0);transform: rotate(0);}			
 }
 
 @keyframes buzzing {
     0% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
-    1% {-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
-    2% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
-	3% {-webkit-transform: rotate(15deg);transform: rotate(15deg);}
-	4% {-webkit-transform: rotate(0);transform: rotate(0);}
-	5% {-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
-    6% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
-	7% {-webkit-transform: rotate(15deg);transform: rotate(15deg);}
-	8% {-webkit-transform: rotate(0);transform: rotate(0);}
-	9% {-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
+    5% {-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
     10% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
-	11% {-webkit-transform: rotate(15deg);transform: rotate(15deg);}
-	12% {-webkit-transform: rotate(0);transform: rotate(0);}	
+	15% {-webkit-transform: rotate(15deg);transform: rotate(15deg);}
+	20% {-webkit-transform: rotate(0);transform: rotate(0);}
+	25% {-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
+    30% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+	35% {-webkit-transform: rotate(15deg);transform: rotate(15deg);}
+	40% {-webkit-transform: rotate(0);transform: rotate(0);}
 	100% {-webkit-transform: rotate(0);transform: rotate(0);}			
+}
+
+@-webkit-keyframes lift {
+    0%  {margin-top: 0;}
+    25%  {margin-top: -5px;}
+    50%  {margin-top: 0;}
+	100%{margin-top: 0;}
+}
+
+@keyframes lift {
+    0%  {margin-top: 0;}
+    25%  {margin-top: -5px;}
+    50%  {margin-top: 0;}
+	100%{margin-top: 0;}
 }
 
 

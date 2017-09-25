@@ -1,11 +1,14 @@
 .contacts-section{
-
 	height: auto;
-	min-height: 500px;
+	min-height: 700px;
 	background-image:url('/assets/images/staple_wall--large.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
+
+	@mixin atTall{
+		min-height: 100vh;
+	}
 
 	&__title{
 		margin: 0;
@@ -25,10 +28,25 @@
 		justify-content: center;
 		padding: 1.5rem 0;
 
+		@mixin atMedium{
+			flex-flow: row wrap;
+			justify-content: space-around;
+			align-items: space-around;
+			padding: 0 2.5rem ;
+		}
+
+		@mixin atTall{
+			margin-top: 10vh;
+		}
+
 		.closer{
 			margin: 2rem 0;
 			color: white;
 			text-shadow: 2px 2px 4px black;
+
+			@mixin atSmall{
+				font-size: 2.5rem;
+			}
 		}
 	}
 
@@ -37,10 +55,25 @@
 		height: 80%;
 		display: flex;
 		flex-flow: column;
+		justify-content: center;
 		align-items: center;
-		padding: 1.5rem 1rem;
-		background: rgba(255, 255, 255, 0.9);
-		box-shadow: 1px 1px 4px black;
+		padding: 1.5rem 1rem .5rem 1rem;
+		color: white;
+		text-shadow: 2px 2px 4px black;
+
+		@mixin atSmall{
+			flex-flow: row nowrap;
+			justify-content: space-around;
+			width: auto;
+			height: auto;
+			margin: 2rem 1rem;
+			padding: 2rem;
+			font-size: 1.2rem;
+			color: black;
+			text-shadow: none;
+			background: rgba(255, 255, 255, 0.9);
+			box-shadow: 1px 1px 4px black;
+		}
 
 		img{
 			width: 150px;
@@ -60,39 +93,81 @@
 			a{
 				font-weight: 700;
 			}
+
+			a:hover{
+				color: $orangy;
+			}
+		}
+	}
+
+	.contacts-map{
+		width: 80%;
+		height: 250px;
+		margin-top: 2rem;
+		box-shadow: 1px 1px 4px black;
+
+		@mixin atMedium{
+			width: 400px;
+			height: 400px;
+			margin-top: 1rem;
+		}
+	}
+
+	.closer{
+		width: 100%;
+		text-align: center;
+		font-size: 2.5rem;
+
+		@mixin atMedium{
+			font-size: 3.5rem;
+		}
+	}	
+}
+
+.contacts-section li.buzz:hover i{
+	animation: buzzing 1s ease-in-out 0s infinite;
+}
+
+.contacts-section li.lift{
+	a{
+		margin-left: 20px;
+
+		@mixin atMedium{
+			margin-left: 22px;
 		}
 
-		.contacts-map{
-			width: 250px;
-			height: 250px;
-			max-width: 90%;
-			border: 10px solid black;
-		}	
+		@mixin atMedium{
+			margin-left: 24px;
+		}
 	}
+
+	i{
+		position: absolute;
+	} 
+
+	&:hover i{
+		animation: lift 1s ease-in-out 0s infinite;
+	} 
 }
 
-.contacts-section li:nth-child(1) i{
-	animation: buzzing 5s ease-in-out 4s infinite; 
-}
-
-.contacts-section li:nth-child(2) i{
-	animation: buzzing 5s ease-in-out 8s infinite; 
-}
 
 @keyframes buzzing {
     0% {transform: rotate(0deg);}
-    1% {transform: rotate(-15deg);}
-    2% {transform: rotate(0deg);}
-	3% {transform: rotate(15deg);}
-	4% {transform: rotate(0);}
-	5% {transform: rotate(-15deg);}
-    6% {transform: rotate(0deg);}
-	7% {transform: rotate(15deg);}
-	8% {transform: rotate(0);}
-	9% {transform: rotate(-15deg);}
+    5% {transform: rotate(-15deg);}
     10% {transform: rotate(0deg);}
-	11% {transform: rotate(15deg);}
-	12% {transform: rotate(0);}	
+	15% {transform: rotate(15deg);}
+	20% {transform: rotate(0);}
+	25% {transform: rotate(-15deg);}
+    30% {transform: rotate(0deg);}
+	35% {transform: rotate(15deg);}
+	40% {transform: rotate(0);}
 	100% {transform: rotate(0);}			
+}
+
+@keyframes lift {
+    0%  {margin-top: 0;}
+    25%  {margin-top: -5px;}
+    50%  {margin-top: 0;}
+	100%{margin-top: 0;}
 }
  

@@ -14,10 +14,6 @@ a{
 	color: $orangy-lighter;
 }
 
-a:hover{
-	color: $orangy;
-}
-
 .section-title{
 	margin: 0;
 	padding: 1em;
