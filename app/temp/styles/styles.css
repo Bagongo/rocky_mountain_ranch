@@ -760,7 +760,6 @@ footer{
 }
 
 .home-section{
-
 	background-image:url('/assets/images/staple_wall--1200x800.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -1355,7 +1354,7 @@ footer{
   margin-left: 20px;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
 
   .contacts-section li.lift a {
     margin-left: 22px;

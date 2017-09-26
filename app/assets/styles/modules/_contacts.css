@@ -124,7 +124,7 @@
 	a{
 		margin-left: 20px;
 
-		@mixin atMedium{
+		@mixin atSmall{
 			margin-left: 22px;
 		}
 
@@ -135,13 +135,12 @@
 
 	i{
 		position: absolute;
-	} 
+	}
 
 	&:hover i{
 		animation: lift 1s ease-in-out 0s infinite;
 	} 
 }
-
 
 @keyframes buzzing {
     0% {transform: rotate(0deg);}
