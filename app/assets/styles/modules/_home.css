@@ -12,7 +12,7 @@
 		flex-flow:  column;
 		align-items: center;
 		justify-content: space-around;
-		padding: 0 20px;
+		padding: 0;
 
 		@mixin atMedium{
 			justify-content: center;
@@ -29,8 +29,8 @@
 
 		&__title > h1{
 			display: none;
+			margin: 20px 0;
 			
-
 			@mixin atSmall{
 				display: block;
 				justify-content: flex-start;
@@ -156,6 +156,7 @@
 			img:nth-of-type(1){
 
 				width: 80px;
+				border-radius: 4px;
 
 				@mixin atSmall{
 					width: 100px;
@@ -171,7 +172,6 @@
 				}
 			}			
 		}
+	}
 
-	}	
-	
 }
