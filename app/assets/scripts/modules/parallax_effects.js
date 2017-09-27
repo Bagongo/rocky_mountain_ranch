@@ -30,8 +30,8 @@ class ParallaxSection{
 
 
 new ParallaxSection("#trekking-a-cavallo", -0.1, 1.5);
-new ParallaxSection("#pony-game", -0.1, 1.5);
-new ParallaxSection("#lavoro-in-piano", 0.1, -1);
+new ParallaxSection("#pony-game", -0.1, 1.7);
+new ParallaxSection("#corsi-equitazione", -0.1, 1.2);
 
 
 

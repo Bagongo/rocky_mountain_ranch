@@ -11,6 +11,10 @@
 		min-height: 100vh;
 	}
 
+	@mixin atMedium{
+		min-height: 100vh;
+	}
+
 	&__title{
 		margin: 0;
 		padding: 1.5rem;

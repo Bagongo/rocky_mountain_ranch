@@ -10372,6 +10372,19 @@ $(".navbar-toggle").on("click", function (event) {
 	$navbar.toggleClass("responsive");
 });
 
+$("#topnav a:not(:last)").on("click", function (e) {
+	e.preventDefault();
+
+	// $("#topnav").removeClass("responsive");
+
+	var target = this.hash;
+	var scrollTo = $(target).offset().top - $("#topnav").height();
+
+	console.log(scrollTo);
+
+	$('html, body').stop().animate({ 'scrollTop': scrollTo }, 900, 'swing');
+});
+
 /***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -10418,8 +10431,8 @@ var ParallaxSection = function () {
 }();
 
 new ParallaxSection("#trekking-a-cavallo", -0.1, 1.5);
-new ParallaxSection("#pony-game", -0.1, 1.5);
-new ParallaxSection("#lavoro-in-piano", 0.1, -1);
+new ParallaxSection("#pony-game", -0.1, 1.7);
+new ParallaxSection("#corsi-equitazione", -0.1, 1.2);
 
 /***/ }),
 /* 5 */
