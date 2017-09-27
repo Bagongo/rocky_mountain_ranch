@@ -50,13 +50,21 @@
     justify-items: center;
     align-items: center;
     margin: 10px 0;
+    text-decoration: none;
     font-size: 1.4rem;
     color: white;
 
+    &:hover{
+      color: darkgray;
+    }
+
     @mixin atMedium{
-        text-decoration: none;
         margin: 0 10px;
         color: lightgray;
+
+        &:hover{
+          color: white;
+        }
 
         &:hover img{
           visibility: visible;
