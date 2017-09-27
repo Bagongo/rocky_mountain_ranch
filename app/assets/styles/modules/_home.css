@@ -145,7 +145,7 @@
 			}
 
 			img{
-				opacity: 0.9;
+				opacity: 0.8;
 
 				@mixin atMedium{
 					margin: 0 20px;
