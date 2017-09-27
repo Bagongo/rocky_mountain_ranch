@@ -10345,14 +10345,19 @@ return jQuery;
 
 
 $(window).on("resize", function () {
-	var windowH = $(window).height();
-	var topnavH = $("#topnav").height();
-	var newSectionH = windowH - topnavH;
 
+	var windowH = $(window).height();
+	var topnavH = $(".navbar").height();
+	var newSectionH = windowH - topnavH;
 	newSectionH += Math.ceil(newSectionH / 100);
 
-	$(".section").css("height", newSectionH + "px");
-	$("body").css("margin-top", Math.round(topnavH));
+	if ($(this).width() < 800) {
+		$(".section").css("height", "100vh");
+		$("body").css("margin-top", 0);
+	} else {
+		$(".section").css("height", newSectionH + "px");
+		$("body").css("margin-top", Math.round(topnavH));
+	}
 
 	$(".full-image-section").each(function () {
 		$(this).css("background-position", "center center");
@@ -10366,22 +10371,26 @@ $(window).on("resize", function () {
 "use strict";
 
 
-$(".navbar-toggle").on("click", function (event) {
-	event.preventDefault();
-	var $navbar = $(this).closest(".navbar");
-	$navbar.toggleClass("responsive");
+$(window).on("resize", function () {
+	if ($(this).width() >= 800) $(".navbar").removeClass("visible");
 });
 
-$("#topnav a:not(:last)").on("click", function (e) {
+$(".navbar__toggle").on("click", function (event) {
+	$(".navbar").toggleClass("visible");
+});
+
+$(".navbar a").on("click", function (e) {
 	e.preventDefault();
 
-	// $("#topnav").removeClass("responsive");
-
 	var target = this.hash;
-	var scrollTo = $(target).offset().top - $("#topnav").height();
+	var compensateNavOffset = $(".navbar").height();
 
-	console.log(scrollTo);
+	if ($(window).width() < 800) {
+		compensateNavOffset = 0;
+		$(".navbar").removeClass("visible");
+	}
 
+	var scrollTo = $(target).offset().top - compensateNavOffset;
 	$('html, body').stop().animate({ 'scrollTop': scrollTo }, 900, 'swing');
 });
 

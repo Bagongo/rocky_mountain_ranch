@@ -1,19 +1,25 @@
-$(".navbar-toggle").on("click", function(event) {
-	event.preventDefault();
-	var $navbar = $(this).closest(".navbar");
-	$navbar.toggleClass("responsive");
+$(window).on("resize", function(){
+	if($(this).width() >= 800)
+		$(".navbar").removeClass("visible");
 });
 
-$("#topnav a:not(:last)").on("click", function(e){
+$(".navbar__toggle").on("click", function(event){
+	$(".navbar").toggleClass("visible");
+});
+
+$(".navbar a").on("click", function(e){
      e.preventDefault();
 
-	// $("#topnav").removeClass("responsive");
-
 	var target = this.hash;
-	var scrollTo = $(target).offset().top - $("#topnav").height();
+	var compensateNavOffset = $(".navbar").height();
 
-	console.log(scrollTo);
+	if($(window).width() < 800)
+	{
+		compensateNavOffset = 0;
+		$(".navbar").removeClass("visible");
+	}
 
+	var scrollTo = $(target).offset().top - compensateNavOffset;
 	$('html, body').stop().animate({'scrollTop': scrollTo}, 900, 'swing');
 });
 

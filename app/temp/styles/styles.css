@@ -445,88 +445,125 @@ a{
 	color: white;
 }
 
-/* Add a black background color to the top navigation */
-
-.navbar {
-    z-index: 10;
-    background-color: #4D4E4E;
-    overflow: hidden;
-    position: fixed; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */
+.navbar__toggle{
+    width: auto;
+    z-index: 3;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    -webkit-filter: drop-shadow( -2px -2px 2px #000 );
+            filter: drop-shadow( -2px -2px 2px #000 );
 }
 
-/* Style the links inside the navigation bar */
+@media (min-width: 800px) {
 
-.navbar a {
-    float: left;
+  .navbar__toggle {
+    display: none;
+  }
+}
+
+.navbar__toggle img{
+  width: 50px;
+}
+
+.navbar{
+  visibility: hidden;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  padding: 0 20px;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+
+}
+
+@media (min-width: 800px) {
+
+  .navbar {
+    visibility: visible;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    height: 64px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    color: #fff;
-    text-align: center;
-    padding: 16px 8px;
-    text-decoration: none;
-    font-size: 20px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 0 5px;
+    background-color: #404040;
+    opacity: 1;
+    box-shadow: 0 2px 4px black;
+    transition: none;
+  }
 }
 
-/* Change the color of links on hover */
+.navbar a{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-grid-column-align: center;
+      justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px 0;
+  font-size: 1.4rem;
+  color: white;
+}
 
-.navbar a:hover {
+@media (min-width: 800px) {
 
+  .navbar a {
+    text-decoration: none;
+    margin: 0 10px;
+    color: lightgray;
+  }
+
+  .navbar a:hover img {
+    visibility: visible;
+  }
 }
 
 .navbar a img{
-  width:  24px;
+  display: none;
+  width: 30px;
+  margin-right: 5px;
   visibility: hidden;
-  fill: white;
-  margin: 0 5px;
+  fill: green;
 }
 
-.navbar a:hover img{
-    visibility: visible;
-}
+@media (min-width: 800px) {
 
-/* Hide the link that should open and close the navbar on small screens */
-
-.navbar .icon {
-    display: none;
-}
-
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the navbar (.icon) */
-
-@media screen and (max-width: 800px) {
-  .navbar a:not(:first-child) {display: none;}
-  .navbar a.icon {
-    float: right;
+  .navbar a img {
     display: block;
   }
 }
 
-/* The "responsive" class is added to the navbar with JavaScript when the user clicks on the icon. This class makes the navbar look good on small screens (display the links vertically instead of horizontally) */
-
-@media screen and (max-width: 800px) {
-  .navbar.responsive {position: fixed;}
-  .navbar.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .navbar.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-
-  .navbar.responsive a img{
-    display: none;
-  }
+.navbar.visible{
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.25s, opacity 0.25s linear;
 }
 
 footer{
