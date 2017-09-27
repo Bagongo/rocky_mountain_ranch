@@ -10379,7 +10379,7 @@ $(".navbar__toggle").on("click", function (event) {
 	$(".navbar").toggleClass("visible");
 });
 
-$(".navbar a").on("click", function (e) {
+$("a[href^='#']").on("click", function (e) {
 	e.preventDefault();
 
 	var target = this.hash;
@@ -10420,7 +10420,7 @@ var ParallaxSection = function () {
 	_createClass(ParallaxSection, [{
 		key: 'events',
 		value: function events() {
-			//make sure the parallax acts on a layout already set 
+			//makes sure the parallax acts on a layout already set 
 			//by forcing resize and scroll before triggering the effect
 			$(window).trigger('resize').trigger('scroll');
 			$(window).scroll(this.triggerParallax.bind(this));
@@ -10457,7 +10457,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var lastScrollTop = 0;
 
 var slideInElement = function () {
-	function slideInElement(element, parent, side, speed) {
+	function slideInElement(element, parent, side) {
 		_classCallCheck(this, slideInElement);
 
 		this.element = element;
@@ -10490,8 +10490,8 @@ var slideInElement = function () {
 	return slideInElement;
 }();
 
-new slideInElement($(".istruttore").eq(0), $("#instructors"), "left", 10);
-new slideInElement($(".istruttore").eq(1), $("#instructors"), "right", 10);
+new slideInElement($(".istruttore").eq(0), $("#instructors"), "left");
+new slideInElement($(".istruttore").eq(1), $("#instructors"), "right");
 
 /***/ })
 /******/ ]);

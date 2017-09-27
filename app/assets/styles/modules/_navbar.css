@@ -37,7 +37,7 @@
   @mixin atMedium{
     visibility: visible;
     display: flex;
-    height: 64px;
+    height: 62px;
     flex-flow: row;
     align-items: center;
     justify-content: center;
@@ -74,7 +74,7 @@
 
   a img{
       display: none;
-      width: 30px;
+      width: 28px;
       margin-right: 5px;
       visibility: hidden;
       fill: green;

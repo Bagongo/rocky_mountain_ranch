@@ -16,7 +16,6 @@
 		display: flex;
 		flex-flow: column;
 		justify-content: flex-start;
-		font-size: .8rem;
 		
 		@mixin atMedium{
 			justify-content: center;
@@ -34,7 +33,6 @@
 			flex: 1;
 			display: flex;
 			align-items: center;
-			align-content: center;
 			overflow: scroll;
 			text-align: center;
 			padding: 0 1rem;
@@ -46,6 +44,7 @@
 			@mixin atMedium{
 				flex: .5;
 				height: 50%;
+				align-items: flex-start;
 				padding: 2em;
 				font-size: 1.2rem;
 				text-align: left;

@@ -423,8 +423,6 @@ textarea {
 
 * {
   box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
 }
 
 html, body{
@@ -434,7 +432,12 @@ html, body{
 
 a{
 	text-decoration: underline;
+	font-weight: 700;
 	color: #FD9A20;
+}
+
+a:hover{
+	color: #FF7A23;
 }
 
 .section-title{
@@ -443,6 +446,14 @@ a{
 	text-align: center;
 	background-color: black;
 	color: white;
+	font-size: 1.6rem;
+}
+
+@media (min-width: 800px) {
+
+  .section-title {
+    font-size: 2rem;
+  }
 }
 
 .navbar__toggle{
@@ -498,7 +509,7 @@ a{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    height: 64px;
+    height: 62px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-flow: row;
@@ -553,7 +564,7 @@ a{
 
 .navbar a img{
   display: none;
-  width: 30px;
+  width: 28px;
   margin-right: 5px;
   visibility: hidden;
   fill: green;
@@ -636,7 +647,6 @@ footer{
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  font-size: .8rem;
 }
 
 @media (min-width: 800px) {
@@ -666,8 +676,6 @@ footer{
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
   overflow: scroll;
   text-align: center;
   padding: 0 1rem;
@@ -684,6 +692,9 @@ footer{
         -ms-flex: .5;
             flex: .5;
     height: 50%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     padding: 2em;
     font-size: 1.2rem;
     text-align: left;
@@ -811,6 +822,18 @@ footer{
 
 .full-image-section__content__text--yellow span{
   color: #FFF919;
+}
+
+#trekking-a-cavallo{
+    background-image:url('/assets/images/trekking_a_cavallo--1200x800.jpg');
+}
+
+#pony-game{
+    background-image:url('/assets/images/pony_games-large.jpg');
+}
+
+#corsi-equitazione{
+    background-image: url('/assets/images/ranch-cavalli-2.jpg');
 }
 
 .parallax-fx{
@@ -1000,11 +1023,6 @@ footer{
   font-size: 1.2rem;
 }
 
-.home-section__content__textbox p span{
-  color: #FF7A23;
-  font-weight: 700;
-}
-
 @media (min-width: 600px) {
 
   .home-section__content__textbox p {
@@ -1080,18 +1098,9 @@ footer{
   }
 }
 
-#trekking-a-cavallo{
-	background-image:url('/assets/images/trekking_a_cavallo_01-large.jpg');
-}
-
-#pony-game{
-	background-image:url('/assets/images/pony_games-large.jpg');
-}
-
 #instructors{
 	position: relative;
 	width: 100%;
-	font-size: .8rem;
 	height: auto;
 	max-height: 1000px;
 	min-height: 500px;
@@ -1121,7 +1130,6 @@ footer{
 
   #instructors .istruttori {
     padding: 12vh 0 0 0;
-    font-size: .9rem;
     background-image: url('/assets/images/rocky_mountain_ranch--logo.png');
     background-repeat: no-repeat;
     background-position: center center;
@@ -1147,7 +1155,6 @@ footer{
       -ms-flex-align: center;
           align-items: center;
   margin: 0;
-  font-size: .9rem;
   text-align: center;
   color: white;
   text-shadow: 2px 2px 4px black;
@@ -1160,7 +1167,6 @@ footer{
     height: 100%;
     float: left;
     padding-bottom: 0;
-    font-size: 1.2em;
     text-align: left;
     color: black;
     background-color: rgba(255, 255, 255, 0.97);
@@ -1182,7 +1188,13 @@ footer{
 
 #instructors .istruttore h2{
   margin: .5rem 0 1rem 0;
-  font-size: 1.6rem;
+}
+
+@media (min-width: 800px) {
+
+  #instructors .istruttore h2 {
+    margin: 1rem 0;
+  }
 }
 
 #instructors .istruttore p{
@@ -1198,6 +1210,7 @@ footer{
 @media (min-width: 600px) {
 
   #instructors .istruttore p {
+    font-size: 1.1rem;
     padding: 4rem;
   }
 }
@@ -1245,10 +1258,6 @@ footer{
   }
 }
 
-#corsi-equitazione{
-	background-image: url('/assets/images/ranch-cavalli-2.jpg');
-}
-
 .contacts-section{
 	height: auto;
 	min-height: 700px;
@@ -1271,15 +1280,6 @@ footer{
   .contacts-section {
     min-height: 100vh;
   }
-}
-
-.contacts-section__title{
-  margin: 0;
-  padding: 1.5rem;
-  color: white;
-  font-size: 1.6rem;
-  text-align: center;
-  background: black;
 }
 
 .contacts-section__content{
@@ -1377,14 +1377,6 @@ footer{
 
 .contacts-section .contact__card ul li img{
   width: 75px;
-}
-
-.contacts-section .contact__card ul a{
-  font-weight: 700;
-}
-
-.contacts-section .contact__card ul a:hover{
-  color: #FF7A23;
 }
 
 .contacts-section .contacts-map{

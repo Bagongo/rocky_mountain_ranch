@@ -11,7 +11,7 @@ class ParallaxSection{
 
 	events()
 	{
-		//make sure the parallax acts on a layout already set 
+		//makes sure the parallax acts on a layout already set 
 		//by forcing resize and scroll before triggering the effect
 		$(window).trigger('resize').trigger('scroll');
 		$(window).scroll(this.triggerParallax.bind(this));

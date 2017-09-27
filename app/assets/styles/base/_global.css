@@ -1,7 +1,5 @@
 * {
   box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
 }
 
 html, body{
@@ -11,7 +9,12 @@ html, body{
 
 a{
 	text-decoration: underline;
+	font-weight: 700;
 	color: $orangy-lighter;
+}
+
+a:hover{
+	color: $orangy;
 }
 
 .section-title{
@@ -20,6 +23,11 @@ a{
 	text-align: center;
 	background-color: black;
 	color: white;
+	font-size: 1.6rem;
+
+	@mixin atMedium{
+		font-size: 2rem;
+	}
 }
 
 

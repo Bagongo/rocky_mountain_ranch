@@ -7,7 +7,7 @@ $(".navbar__toggle").on("click", function(event){
 	$(".navbar").toggleClass("visible");
 });
 
-$(".navbar a").on("click", function(e){
+$("a[href^='#']").on("click", function(e){
      e.preventDefault();
 
 	var target = this.hash;

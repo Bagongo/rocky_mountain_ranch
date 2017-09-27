@@ -2,7 +2,7 @@ var lastScrollTop = 0;
 
 class slideInElement{
 
-	constructor(element, parent, side, speed){
+	constructor(element, parent, side){
 		this.element = element;
 		this.margin = "margin-" + side;
 		this.parent = parent;
@@ -35,6 +35,6 @@ class slideInElement{
 
 }
 
-new slideInElement($(".istruttore").eq(0), $("#instructors"), "left", 10);
-new slideInElement($(".istruttore").eq(1), $("#instructors"), "right", 10);
+new slideInElement($(".istruttore").eq(0), $("#instructors"), "left");
+new slideInElement($(".istruttore").eq(1), $("#instructors"), "right");
 
