@@ -29,7 +29,9 @@
 		&__title > h1{
 			display: none;
 			margin: 20px 0;
-			
+			font-family: Bebas;
+			word-spacing: 10px;
+
 			@mixin atSmall{
 				display: block;
 				justify-content: flex-start;
@@ -41,12 +43,13 @@
 			}
 
 			@mixin atMedium{
+				margin: 50px 0;
 				align-self: flex-start;
-				font-size: 3rem;
+				font-size: 4rem;
 			}
 
 			@mixin atLarge{
-				font-size: 4rem;
+				font-size: 5rem;
 			}
 		}
 

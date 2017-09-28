@@ -421,6 +421,11 @@ textarea {
   font: inherit; /* 2 */
 }
 
+@font-face {
+    font-family: "Bebas";
+    src: url("/assets/fonts/BEBAS___.ttf");
+}
+
 * {
   box-sizing: border-box;
 }
@@ -428,6 +433,7 @@ textarea {
 html, body{
 	width: 100%;
 	height: 100%;
+
 }
 
 a{
@@ -542,7 +548,8 @@ a:hover{
           align-items: center;
   margin: 10px 0;
   text-decoration: none;
-  font-size: 1.4rem;
+  font-weight: 500;
+  font-size: 1.35rem;
   color: white;
 }
 
@@ -897,6 +904,8 @@ footer{
 .home-section__content__title > h1{
   display: none;
   margin: 20px 0;
+  font-family: Bebas;
+  word-spacing: 10px;
 }
 
 @media (min-width: 600px) {
@@ -918,16 +927,17 @@ footer{
 @media (min-width: 800px) {
 
   .home-section__content__title > h1 {
+    margin: 50px 0;
     -ms-flex-item-align: start;
         align-self: flex-start;
-    font-size: 3rem;
+    font-size: 4rem;
   }
 }
 
 @media (min-width: 1200px) {
 
   .home-section__content__title > h1 {
-    font-size: 4rem;
+    font-size: 5rem;
   }
 }
 
@@ -1400,6 +1410,8 @@ footer{
   font-size: 2.5rem;
   color: white;
   text-shadow: 2px 2px 4px black;
+  font-family: Bebas;
+  word-spacing: 10px;
 }
 
 @media (min-width: 600px) {

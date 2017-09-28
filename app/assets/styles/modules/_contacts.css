@@ -95,6 +95,8 @@
 		font-size: 2.5rem;
 		color: white;
 		text-shadow: 2px 2px 4px black;
+		font-family: Bebas;
+		word-spacing: 10px;
 
 		@mixin atSmall{
 			font-size: 3.5rem;
