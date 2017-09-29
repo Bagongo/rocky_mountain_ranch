@@ -422,6 +422,78 @@ textarea {
 }
 
 @font-face {
+  font-family: 'fontello';
+  src: url('/assets/fonts/fontello.eot?3321171');
+  src: url('/assets/fonts/fontello.eot?3321171#iefix') format('embedded-opentype'),
+       url('/assets/fonts/fontello.woff2?3321171') format('woff2'),
+       url('/assets/fonts/fontello.woff?3321171') format('woff'),
+       url('/assets/fonts/fontello.ttf?3321171') format('truetype'),
+       url('/assets/fonts/fontello.svg?3321171#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?3321171#fontello') format('svg');
+  }
+}
+*/
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-phone:before { content: '\e800'; }
+
+/* '' */
+
+.icon-globe:before { content: '\e801'; }
+
+/* '' */
+
+.icon-mail-alt:before { content: '\f0e0'; }
+
+/* '' */
+
+@font-face {
     font-family: "Bebas";
     src: url("/assets/fonts/BEBAS___.ttf");
 }
@@ -1334,7 +1406,7 @@ footer{
   }
 }
 
-.contacts-section .contact__card{
+.contacts-section .contacts-section__card{
   width: auto;
   height: auto;
   display: -webkit-box;
@@ -1357,7 +1429,7 @@ footer{
 
 @media (min-width: 600px) {
 
-  .contacts-section .contact__card {
+  .contacts-section .contacts-section__card {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-flow: row nowrap;
@@ -1376,19 +1448,19 @@ footer{
   }
 }
 
-.contacts-section .contact__card img{
+.contacts-section .contacts-section__card img{
   width: 150px;
 }
 
-.contacts-section .contact__card ul{
+.contacts-section .contacts-section__card ul{
   list-style: none;
 }
 
-.contacts-section .contact__card ul li{
+.contacts-section .contacts-section__card ul li{
   margin: 10px 0;
 }
 
-.contacts-section .contact__card ul li img{
+.contacts-section .contacts-section__card ul li img{
   width: 75px;
 }
 
@@ -1433,39 +1505,42 @@ footer{
   }
 }
 
-.contacts-section li.buzz:hover i{
-	-webkit-animation: buzzing 1s ease-in-out 0s infinite;
-	        animation: buzzing 1s ease-in-out 0s infinite;
+/* Rules for contact card icons animation */
+
+.contacts-section__card__element{
+  position: relative;
 }
 
-.contacts-section li.lift a{
-  margin-left: 20px;
+.contacts-section__card__element i{
+  position: absolute;
+  left: -20px;
 }
 
 @media (min-width: 600px) {
 
-  .contacts-section li.lift a {
-    margin-left: 22px;
+  .contacts-section__card__element i {
+    left: -22px;
   }
 }
 
 @media (min-width: 800px) {
 
-  .contacts-section li.lift a {
-    margin-left: 24px;
+  .contacts-section__card__element i {
+    left: -24px;
   }
 }
 
-.contacts-section li.lift i{
-  position: absolute;
+.contacts-section__card__element:hover.buzz i{
+  -webkit-animation: buzz 1s ease-in-out 0s infinite;
+          animation: buzz 1s ease-in-out 0s infinite;
 }
 
-.contacts-section li.lift:hover i{
+.contacts-section__card__element:hover.lift i{
   -webkit-animation: lift 1s ease-in-out 0s infinite;
           animation: lift 1s ease-in-out 0s infinite;
 }
 
-@-webkit-keyframes buzzing {
+@-webkit-keyframes buzz {
     0% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
     5% {-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
     10% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
@@ -1478,7 +1553,7 @@ footer{
 	100% {-webkit-transform: rotate(0);transform: rotate(0);}			
 }
 
-@keyframes buzzing {
+@keyframes buzz {
     0% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
     5% {-webkit-transform: rotate(-15deg);transform: rotate(-15deg);}
     10% {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
@@ -1492,17 +1567,19 @@ footer{
 }
 
 @-webkit-keyframes lift {
-    0%  {margin-top: 0;}
-    25%  {margin-top: -5px;}
-    50%  {margin-top: 0;}
-	100%{margin-top: 0;}
+    0%  {margin-top: 0; opacity: 1}
+    50%  {margin-top: -8px;}
+	75%  {margin-top: -8px; opacity: 0}
+	80%	{margin-top: 0; opacity: 0}
+	100%{margin-top: 0; opacity: 1}
 }
 
 @keyframes lift {
-    0%  {margin-top: 0;}
-    25%  {margin-top: -5px;}
-    50%  {margin-top: 0;}
-	100%{margin-top: 0;}
+    0%  {margin-top: 0; opacity: 1}
+    50%  {margin-top: -8px;}
+	75%  {margin-top: -8px; opacity: 0}
+	80%	{margin-top: 0; opacity: 0}
+	100%{margin-top: 0; opacity: 1}
 }
 
 

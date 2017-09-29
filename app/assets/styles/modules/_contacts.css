@@ -35,7 +35,7 @@
 		}
 	}
 
-	.contact__card{
+	.contacts-section__card{
 		width: auto;
 		height: auto;
 		display: flex;
@@ -109,34 +109,37 @@
 	}
 }
 
-.contacts-section li.buzz:hover i{
-	animation: buzzing 1s ease-in-out 0s infinite;
-}
+/* Rules for contact card icons animation */
+.contacts-section__card{
 
-.contacts-section li.lift{
+	&__element{
+		position: relative;
 
-	a{
-		margin-left: 20px;
+		i{
+			position: absolute;
 
-		@mixin atSmall{
-			margin-left: 22px;
+			left: -20px;
+
+			@mixin atSmall{
+				left: -22px;
+			}
+
+			@mixin atMedium{
+				left: -24px;
+			}
 		}
 
-		@mixin atMedium{
-			margin-left: 24px;
-		}
-	}
+		&:hover.buzz i{
+			animation: buzz 1s ease-in-out 0s infinite;
+		} 
 
-	i{
-		position: absolute;
+		&:hover.lift i{
+			animation: lift 1s ease-in-out 0s infinite;
+		} 
 	}
-
-	&:hover i{
-		animation: lift 1s ease-in-out 0s infinite;
-	} 
 }
 
-@keyframes buzzing {
+@keyframes buzz {
     0% {transform: rotate(0deg);}
     5% {transform: rotate(-15deg);}
     10% {transform: rotate(0deg);}
@@ -150,9 +153,10 @@
 }
 
 @keyframes lift {
-    0%  {margin-top: 0;}
-    25%  {margin-top: -5px;}
-    50%  {margin-top: 0;}
-	100%{margin-top: 0;}
+    0%  {margin-top: 0; opacity: 1}
+    50%  {margin-top: -8px;}
+	75%  {margin-top: -8px; opacity: 0}
+	80%	{margin-top: 0; opacity: 0}
+	100%{margin-top: 0; opacity: 1}
 }
  
