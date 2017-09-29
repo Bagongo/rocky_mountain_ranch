@@ -1409,18 +1409,27 @@ footer{
 }
 
 .contacts-section .closer{
-  margin: 2rem 0;
+  margin: 2rem 0.5rem;
   font-size: 2.5rem;
-  color: white;
-  text-shadow: 2px 2px 4px black;
+  text-align: center;
   font-family: Bebas;
   word-spacing: 10px;
+  color: white;
+  text-shadow: 2px 2px 4px black;
 }
 
 @media (min-width: 600px) {
 
   .contacts-section .closer {
     font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .contacts-section .closer {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
   }
 }
 

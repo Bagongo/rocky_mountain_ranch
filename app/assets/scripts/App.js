@@ -1,4 +1,6 @@
+import 'picturefill';
 import 'lazysizes';
+
 
 window.$ = window.jQuery = require("jquery");
 
