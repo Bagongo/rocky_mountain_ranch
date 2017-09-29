@@ -8,10 +8,6 @@
     background-position: center center;
     background-size: cover;
 
-    @mixin atMedium{
-        background-size: cover;
-    }
-
     @mixin atTall{
         background-size: auto 100%;
     }
@@ -55,14 +51,14 @@
     }
 }
 
-#trekking-a-cavallo{
+#trekking-a-cavallo.lazyloaded{
     background-image:url('/assets/images/trekking_a_cavallo--1200x800.jpg');
 }
 
-#pony-game{
+#pony-game.lazyloaded{
     background-image:url('/assets/images/pony_games-large.jpg');
 }
 
-#corsi-equitazione{
+#corsi-equitazione.lazyloaded{
     background-image: url('/assets/images/ranch-cavalli-2.jpg');
 }

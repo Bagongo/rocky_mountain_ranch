@@ -1,3 +1,5 @@
+import 'lazysizes';
+
 window.$ = window.jQuery = require("jquery");
 
 require("./modules/reset_sizes.js");

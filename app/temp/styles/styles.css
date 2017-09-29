@@ -624,11 +624,13 @@ footer{
 	-webkit-box-direction: normal;
 	    -ms-flex-flow: column;
 	        flex-flow: column;
-	background-image:url('/assets/images/plank-lighter--1200x800.jpg');
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
+}
 
+.descriptive-section.lazyloaded{
+  background-image:url('/assets/images/plank-lighter--1200x800.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
 @media (min-width: 800px) {
@@ -758,6 +760,14 @@ footer{
   }
 }
 
+#il-maneggio .descriptive-section__image.lazyloaded{
+	 background-image: url("/assets/images/il–maneggio.jpg");
+}
+
+#i-cavalli .descriptive-section__image.lazyloaded{
+	background-image: url("/assets/images/i_cavalli--1200x800.jpg");
+}
+
 .full-image-section{
 	display:  -webkit-box;
 	display:  -ms-flexbox;
@@ -776,13 +786,6 @@ footer{
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-}
-
-@media (min-width: 800px) {
-
-  .full-image-section {
-    background-size: cover;
-  }
 }
 
 @media (min-height: 800px) {
@@ -831,15 +834,15 @@ footer{
   color: #FFF919;
 }
 
-#trekking-a-cavallo{
+#trekking-a-cavallo.lazyloaded{
     background-image:url('/assets/images/trekking_a_cavallo--1200x800.jpg');
 }
 
-#pony-game{
+#pony-game.lazyloaded{
     background-image:url('/assets/images/pony_games-large.jpg');
 }
 
-#corsi-equitazione{
+#corsi-equitazione.lazyloaded{
     background-image: url('/assets/images/ranch-cavalli-2.jpg');
 }
 
