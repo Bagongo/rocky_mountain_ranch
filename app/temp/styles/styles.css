@@ -662,18 +662,6 @@ a:hover{
   transition: visibility 0.25s, opacity 0.25s linear;
 }
 
-footer{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    text-align: center;
-    background-color: #333;
-    color: #FFF;
-    font: bold 15px verdana;
-    width: 100%;
-    padding: 15px 0;
-}
-
 .section{
 	width: 100vw;
 	height: 100vh;
@@ -916,6 +904,10 @@ footer{
 
 #corsi-equitazione.lazyloaded{
     background-image: url('/assets/images/ranch-cavalli-2.jpg');
+}
+
+#valle-arroscia.lazyloaded{
+    background-image: url('/assets/images/la_valle--1200x800.jpg');
 }
 
 .parallax-fx{
