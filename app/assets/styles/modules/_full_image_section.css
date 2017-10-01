@@ -42,7 +42,6 @@
                 font-weight: 800;
             }
         }
-        
 
         &__text--yellow{
             span{
@@ -57,11 +56,11 @@
 }
 
 #pony-game.lazyloaded{
-    background-image:url('../../assets/images/pony_games-large.jpg');
+    background-image:url('../../assets/images/pony_games--1200x800.jpg');
 }
 
 #corsi-equitazione.lazyloaded{
-    background-image: url('../../assets/images/ranch-cavalli-2.jpg');
+    background-image: url('../../assets/images/ranch_cavalli--1024x683.jpg');
 }
 
 #valle-arroscia.lazyloaded{

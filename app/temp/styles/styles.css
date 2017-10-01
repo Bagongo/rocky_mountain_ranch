@@ -828,7 +828,7 @@ a:hover{
 }
 
 #il-maneggio .descriptive-section__image.lazyloaded{
-	 background-image: url("../../assets/images/il–maneggio.jpg");
+	 background-image: url("../../assets/images/il_maneggio--1024x683.jpg");
 }
 
 #i-cavalli .descriptive-section__image.lazyloaded{
@@ -906,11 +906,11 @@ a:hover{
 }
 
 #pony-game.lazyloaded{
-    background-image:url('../../assets/images/pony_games-large.jpg');
+    background-image:url('../../assets/images/pony_games--1200x800.jpg');
 }
 
 #corsi-equitazione.lazyloaded{
-    background-image: url('../../assets/images/ranch-cavalli-2.jpg');
+    background-image: url('../../assets/images/ranch_cavalli--1024x683.jpg');
 }
 
 #valle-arroscia.lazyloaded{
