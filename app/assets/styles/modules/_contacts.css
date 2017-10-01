@@ -96,7 +96,7 @@
 		text-align: center;
 		font-family: Bebas;
 		word-spacing: 10px;
-		color: white;
+		color: $yellowy;
 		text-shadow: 2px 2px 4px black;
 
 		@mixin atSmall{
