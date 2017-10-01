@@ -5,7 +5,7 @@
 	max-height: 1000px;
 	min-height: 500px;
 
-	background-image:url('/assets/images/staple_wall--1200x800.jpg');
+	background-image:url('../../assets/images/staple_wall--1200x800.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -22,7 +22,7 @@
 
 		@mixin atMedium{
 			padding: 12vh 0 0 0;	
-			background-image: url('/assets/images/rocky_mountain_ranch--logo.png');
+			background-image: url('../../assets/images/rocky_mountain_ranch--logo.png');
 			background-repeat: no-repeat;
 			background-position: center center;
 			background-size: auto;

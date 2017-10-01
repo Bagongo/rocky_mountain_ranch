@@ -1,5 +1,5 @@
 .home-section{
-	background-image:url('/assets/images/staple_wall--1200x800.jpg');
+	background-image:url('../../assets/images/staple_wall--1200x800.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -15,7 +15,7 @@
 
 		@mixin atMedium{
 			justify-content: center;
-			background-image:url('/assets/images/horseshoe--250x271.png');
+			background-image:url('../../assets/images/horseshoe--250x271.png');
 			background-repeat: no-repeat;
 			background-position: 98% 3%;
 			background-size: 200px auto;

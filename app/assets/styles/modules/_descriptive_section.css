@@ -3,7 +3,7 @@
 	flex-flow: column;
 	
 	&.lazyloaded{
-		background-image:url('/assets/images/plank-lighter--1200x800.jpg');
+		background-image:url('../../assets/images/plank-lighter--1200x800.jpg');
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: cover;
@@ -97,9 +97,9 @@
 }
 
 #il-maneggio .descriptive-section__image.lazyloaded{
-	 background-image: url("/assets/images/il–maneggio.jpg");
+	 background-image: url("../../assets/images/il–maneggio.jpg");
 }
 
 #i-cavalli .descriptive-section__image.lazyloaded{
-	background-image: url("/assets/images/i_cavalli--1200x800.jpg");
+	background-image: url("../../assets/images/i_cavalli--1200x800.jpg");
 }
