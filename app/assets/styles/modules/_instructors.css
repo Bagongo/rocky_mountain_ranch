@@ -22,7 +22,7 @@
 
 		@mixin atMedium{
 			padding: 12vh 0 0 0;	
-			background-image: url('../../assets/images/rocky_mountain_ranch--logo.png');
+			background-image: url('../../assets/images/rocky_mountain_ranch-logo--256x256.png');
 			background-repeat: no-repeat;
 			background-position: center center;
 			background-size: auto;
@@ -84,7 +84,6 @@
 
 			@mixin atSmall{
 				font-size: 1.1rem;
-				padding: 4rem;
 			}
 
 			@mixin atMedium{

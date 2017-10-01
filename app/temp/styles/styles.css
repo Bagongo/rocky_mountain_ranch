@@ -687,7 +687,7 @@ a:hover{
 }
 
 .descriptive-section.lazyloaded{
-  background-image:url('../../assets/images/plank-lighter--1200x800.jpg');
+  background-image:url('../../assets/images/plank-lighter--600x400.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -700,6 +700,13 @@ a:hover{
     -webkit-box-direction: normal;
         -ms-flex-flow: row;
             flex-flow: row;
+  }
+
+  .descriptive-section.lazyloaded {
+    background-image: url('../../assets/images/plank-lighter--1200x800.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
   }
 }
 
@@ -820,7 +827,7 @@ a:hover{
   }
 }
 
-#il-maneggio .descriptive-section__image{
+#il-maneggio .descriptive-section__image.lazyloaded{
 	 background-image: url("../../assets/images/il–maneggio.jpg");
 }
 
@@ -922,11 +929,18 @@ a:hover{
 }
 
 .home-section{
-	background-image:url('../../assets/images/staple_wall--1200x800.jpg');
+	background-image:url('../../assets/images/staple_wall--600X400.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
 
+}
+
+@media (min-width: 800px) {
+
+  .home-section {
+    background-image: url('../../assets/images/staple_wall--1200x800.jpg');
+  }
 }
 
 .home-section__content{
@@ -1207,7 +1221,7 @@ a:hover{
 
   #instructors .istruttori {
     padding: 12vh 0 0 0;
-    background-image: url('../../assets/images/rocky_mountain_ranch--logo.png');
+    background-image: url('../../assets/images/rocky_mountain_ranch-logo--256x256.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: auto;
@@ -1288,7 +1302,6 @@ a:hover{
 
   #instructors .istruttore p {
     font-size: 1.1rem;
-    padding: 4rem;
   }
 }
 

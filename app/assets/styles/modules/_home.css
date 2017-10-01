@@ -1,8 +1,12 @@
 .home-section{
-	background-image:url('../../assets/images/staple_wall--1200x800.jpg');
+	background-image:url('../../assets/images/staple_wall--600X400.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
+
+	@mixin atMedium{
+		background-image:url('../../assets/images/staple_wall--1200x800.jpg');	
+	}
 
 	&__content{		
 		width: 100%;	
