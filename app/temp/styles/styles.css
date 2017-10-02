@@ -917,6 +917,10 @@ a:hover{
     background-image: url('../../assets/images/la_valle--1200x800.jpg');
 }
 
+#c-mariano{
+    background-image: url('../../assets/images/cm_04.jpg');
+}
+
 .parallax-fx{
     background-attachment: scroll;
 }
