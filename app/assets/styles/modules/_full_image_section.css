@@ -21,13 +21,21 @@
         @mixin atMedium{
             width:  700px;
             max-height: 500px;
+            padding: 1.5rem;
             border-radius: 5px;
             font-size: 1.1em;
         }
     	
     	&__title{
-            display: inline;
             color: $orangy;
+            font-size: 2rem;
+            margin: 0 0 .75rem 0;
+            text-align: center;
+
+            @mixin atMedium{
+                display: inline;
+                font-size: 2.3rem;
+            }
         }
 
         &__title--yellow{
@@ -36,6 +44,13 @@
 
         &__text{
             display: inline;
+            line-height: 1.2em;
+            text-align: center;
+
+            @mixin atMedium{
+                font-size: 1.2rem;
+                line-height: 1.5rem;
+            }
 
             span{
                 color: $orangy-lighter;

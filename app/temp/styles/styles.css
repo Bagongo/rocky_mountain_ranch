@@ -874,14 +874,25 @@ a:hover{
   .full-image-section__content {
     width: 700px;
     max-height: 500px;
+    padding: 1.5rem;
     border-radius: 5px;
     font-size: 1.1em;
   }
 }
 
 .full-image-section__content__title{
-  display: inline;
   color: #FF7A23;
+  font-size: 2rem;
+  margin: 0 0 .75rem 0;
+  text-align: center;
+}
+
+@media (min-width: 800px) {
+
+  .full-image-section__content__title {
+    display: inline;
+    font-size: 2.3rem;
+  }
 }
 
 .full-image-section__content__title--yellow{
@@ -890,6 +901,16 @@ a:hover{
 
 .full-image-section__content__text{
   display: inline;
+  line-height: 1.2em;
+  text-align: center;
+}
+
+@media (min-width: 800px) {
+
+  .full-image-section__content__text {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
 }
 
 .full-image-section__content__text span{
