@@ -3,7 +3,7 @@
 	flex-flow: column;
 	
 	&.lazyloaded{
-		background-image:url('../../assets/images/plank-lighter--600x400.jpg');
+		background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('../../assets/images/plank-lighter--600x400.jpg');
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: cover;
@@ -13,7 +13,7 @@
 		flex-flow: row;
 
 		&.lazyloaded{
-			background-image:url('../../assets/images/plank-lighter--1200x800.jpg');
+			background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('../../assets/images/plank-lighter--1200x800.jpg');
 			background-repeat: no-repeat;
 			background-position: center center;
 			background-size: cover;
