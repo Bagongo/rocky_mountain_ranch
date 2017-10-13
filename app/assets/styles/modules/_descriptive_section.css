@@ -13,7 +13,7 @@
 		flex-flow: row;
 
 		&.lazyloaded{
-			background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('../../assets/images/plank-lighter--1200x800.jpg');
+			background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url('../../assets/images/plank-lighter--1200x800.jpg');
 			background-repeat: no-repeat;
 			background-position: center center;
 			background-size: cover;
@@ -104,9 +104,18 @@
 }
 
 #il-maneggio .descriptive-section__image.lazyloaded{
-	 background-image: url("../../assets/images/il_maneggio--1024x683.jpg");
+
+	background-image: url("../../assets/images/il_maneggio--600x400.jpg");
+
+	@mixin atMedium{
+		background-image: url("../../assets/images/il_maneggio--1200x800.jpg");
+	}
 }
 
 #i-cavalli .descriptive-section__image.lazyloaded{
-	background-image: url("../../assets/images/i_cavalli--1200x800.jpg");
+	background-image: url("../../assets/images/i_cavalli--600x400.jpg");
+
+	@mixin atMedium{
+		background-image: url("../../assets/images/i_cavalli--1200x800.jpg");
+	}
 }
