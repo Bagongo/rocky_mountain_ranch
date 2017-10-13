@@ -56,7 +56,8 @@
 				height: 50%;
 				align-items: flex-start;
 				padding: 2em;
-				font-size: 1.2rem;
+				font-size: 1.15rem;
+                line-height: 1.35em;
 				text-align: left;
 			}
 

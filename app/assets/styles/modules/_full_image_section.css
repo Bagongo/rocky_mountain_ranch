@@ -21,7 +21,7 @@
         @mixin atMedium{
             width:  700px;
             max-height: 500px;
-            padding: 1.5rem;
+            padding: 1rem 2rem;
             border-radius: 5px;
             font-size: 1.1em;
         }
@@ -48,8 +48,9 @@
             text-align: center;
 
             @mixin atMedium{
-                font-size: 1.2rem;
-                line-height: 1.5rem;
+                font-weight: 100;
+                font-size: 1.15rem;
+                line-height: 1.35em;
             }
 
             span{

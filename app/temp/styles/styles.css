@@ -777,7 +777,8 @@ a:hover{
         -ms-flex-align: start;
             align-items: flex-start;
     padding: 2em;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+    line-height: 1.35em;
     text-align: left;
   }
 }
@@ -894,7 +895,7 @@ a:hover{
   .full-image-section__content {
     width: 700px;
     max-height: 500px;
-    padding: 1.5rem;
+    padding: 1rem 2rem;
     border-radius: 5px;
     font-size: 1.1em;
   }
@@ -928,8 +929,9 @@ a:hover{
 @media (min-width: 800px) {
 
   .full-image-section__content__text {
-    font-size: 1.2rem;
-    line-height: 1.5rem;
+    font-weight: 100;
+    font-size: 1.15rem;
+    line-height: 1.35em;
   }
 }
 
@@ -1353,6 +1355,7 @@ a:hover{
     width: 100%;
     margin-top: 0;
     padding: 0 3rem;
+    line-height: 1.2em;
   }
 }
 
