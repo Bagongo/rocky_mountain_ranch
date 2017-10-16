@@ -49,7 +49,7 @@
 
             @mixin atMedium{
                 font-weight: 100;
-                font-size: 1.15rem;
+                font-size: 1.1rem;
                 line-height: 1.35em;
             }
 

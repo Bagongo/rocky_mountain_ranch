@@ -63,6 +63,15 @@
 				opacity: 0.8;
 				box-shadow: 1px 0 1px black;
 			}
+		}
+
+		img{
+			min-width: 200px; /* FF fix */
+			box-shadow: 1px 0 2px black;
+
+			@mixin atMedium{
+				margin:  -15px 15px 0 0;
+			}
 		}	
 
 		h2{
@@ -81,26 +90,13 @@
 			text-align: center;
 			font-size: 1rem;
 			font-weight: 500;
-
-			@mixin atSmall{
-				font-size: 1.1rem;
-			}
-
+			
 			@mixin atMedium{
 				height: 100%;
 				width: 100%;
 				margin-top: 0;
 				padding: 0 3rem;
-                line-height: 1.2em;
-			}
-		}
-
-		img{
-			max-width: 200px;
-			box-shadow: 1px 0 2px black;
-
-			@mixin atMedium{
-				margin:  -15px 15px 0 0;
+                line-height: 1.25em;
 			}
 		}
 	}
