@@ -1,4 +1,5 @@
 .full-image-section{
+    position: relative;
 	display:  flex;
 	flex-flow: row wrap;
 	justify-content: center;
@@ -13,7 +14,7 @@
     }
 
     &__content{
-        position: relative;
+        position: absolute;
     	width: 100%;
         padding: 20px;
         background-color: rgba(0, 0, 0, .7);
@@ -64,6 +65,15 @@
                 color: $yellowy-lighter;
             }
         }
+    }
+
+    &__content--slidein{
+
+        @mixin atMedium{
+            width: 40%;
+            max-height: 500px;
+        }
+
     }
 }
 

@@ -38,3 +38,4 @@ class slideInElement{
 new slideInElement($(".istruttore").eq(0), $("#instructors"), "left");
 new slideInElement($(".istruttore").eq(1), $("#instructors"), "right");
 
+

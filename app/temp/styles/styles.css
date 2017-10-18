@@ -855,6 +855,7 @@ a:hover{
 }
 
 .full-image-section{
+    position: relative;
 	display:  -webkit-box;
 	display:  -ms-flexbox;
 	display:  flex;
@@ -882,7 +883,7 @@ a:hover{
 }
 
 .full-image-section__content{
-  position: relative;
+  position: absolute;
   width: 100%;
   padding: 20px;
   background-color: rgba(0, 0, 0, .7);
@@ -940,6 +941,14 @@ a:hover{
 
 .full-image-section__content__text--yellow span{
   color: #FFF919;
+}
+
+@media (min-width: 800px) {
+
+  .full-image-section__content--slidein {
+    width: 40%;
+    max-height: 500px;
+  }
 }
 
 #trekking-a-cavallo.lazyloaded{
