@@ -707,7 +707,7 @@ a:hover{
   }
 
   .descriptive-section.lazyloaded {
-    background: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) ),url('../../assets/images/plank-lighter--1200x800.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('../../assets/images/plank-lighter--1200x800.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -776,7 +776,7 @@ a:hover{
             align-items: flex-start;
     padding: 2em;
     font-size: 1.25rem;
-    line-height: 1.25em;
+    line-height: 1.5em;
     text-align: left;
   }
 }
@@ -885,7 +885,7 @@ a:hover{
   position: relative;
   width: 100%;
   padding: 20px;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, .7);
 }
 
 @media (min-width: 800px) {
@@ -893,7 +893,7 @@ a:hover{
   .full-image-section__content {
     width: 700px;
     max-height: 500px;
-    padding: 1rem 2rem;
+    padding: 2rem 2.5rem;
     border-radius: 5px;
     font-size: 1.1em;
   }
@@ -929,7 +929,7 @@ a:hover{
   .full-image-section__content__text {
     font-weight: 100;
     font-size: 1.1rem;
-    line-height: 1.35em;
+    line-height: 1.5em;
   }
 }
 

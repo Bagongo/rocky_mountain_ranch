@@ -16,12 +16,12 @@
         position: relative;
     	width: 100%;
         padding: 20px;
-        background-color: rgba(0, 0, 0, .5);
+        background-color: rgba(0, 0, 0, .7);
 
         @mixin atMedium{
             width:  700px;
             max-height: 500px;
-            padding: 1rem 2rem;
+            padding: 2rem 2.5rem;
             border-radius: 5px;
             font-size: 1.1em;
         }
@@ -50,7 +50,7 @@
             @mixin atMedium{
                 font-weight: 100;
                 font-size: 1.1rem;
-                line-height: 1.35em;
+                line-height: 1.5em;
             }
 
             span{

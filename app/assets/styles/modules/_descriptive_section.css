@@ -13,7 +13,7 @@
 		flex-flow: row;
 
 		&.lazyloaded{
-			background: linear-gradient( rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) ),url('../../assets/images/plank-lighter--1200x800.jpg');
+			background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('../../assets/images/plank-lighter--1200x800.jpg');
 			background-repeat: no-repeat;
 			background-position: center center;
 			background-size: cover;
@@ -56,7 +56,7 @@
 				align-items: flex-start;
 				padding: 2em;
 				font-size: 1.25rem;
-                line-height: 1.25em;
+                line-height: 1.5em;
 				text-align: left;
 			}
 
