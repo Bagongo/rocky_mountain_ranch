@@ -12663,57 +12663,55 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var ParallaxSection = function () {
-	function ParallaxSection(sectionID, bgSpeed, contentSpeed, contentDirection) {
+	function ParallaxSection(sectionID, bgSpeed, contentSpeed, contentSide) {
 		_classCallCheck(this, ParallaxSection);
 
 		this.section = $(sectionID);
 		this.bgSpeed = bgSpeed;
 		this.content = this.section.find(".full-image-section__content");
-		this.contentDirection = contentDirection;
+		this.contentSide = contentSide;
 		this.contentSpeed = contentSpeed;
 
 		this.events();
-		this.init();
 	}
 
 	_createClass(ParallaxSection, [{
-		key: "init",
-		value: function init() {
-			if (this.contentDirection === "left") {}
-		}
-	}, {
-		key: "events",
+		key: 'events',
 		value: function events() {
 			//makes sure the parallax acts on a layout already set 
 			//by forcing resize and scroll before triggering the effect
 			$(window).trigger('resize').trigger('scroll');
-			$(window).scroll(this.triggerParallax.bind(this));
+			$(window).scroll(this.moveBg.bind(this));
+			$(window).scroll(this.moveContent.bind(this));
 		}
 	}, {
-		key: "triggerParallax",
-		value: function triggerParallax() {
+		key: 'moveBg',
+		value: function moveBg() {
 			var newPos = parseInt($(window).scrollTop() - this.section.position().top);
 
 			if ($(window).width() >= 800) this.section.css("background-position", "center " + newPos * this.bgSpeed + "px");
+		}
+	}, {
+		key: 'moveContent',
+		value: function moveContent() {
+			var newPos = parseInt($(window).scrollTop() - this.section.position().top);
 
-			if (Math.abs(parseInt(this.content.css("margin-" + this.contentDirection))) < this.content.width()) {
-				this.content.css("margin-" + this.contentDirection, newPos * 2 + "px");
-			} else this.content.css("margin-" + this.contentDirection, -newPos * 2 + "px");
+			if (this.contentSide === "left" || this.contentSide === "right") {
+				var contentLatPos = Math.min(0, -Math.abs(newPos + $(".navbar").height()));
+				this.content.css(this.contentSide, contentLatPos + "px");
+			}
 
-			// if(this.contentDirection === "left")
-			// 	this.content.css("margin-" + this.contentDirection, - newPos*2 + "px");	
-			// else if(this.contentDirection === "center")
-			//this.content.css("top", this.section.height()/2 - this.content.height()/2 + newPos * this.contentSpeed + "px");	
+			this.content.css("top", this.section.height() / 2 - this.content.height() / 2 + newPos * this.contentSpeed + "px");
 		}
 	}]);
 
 	return ParallaxSection;
 }();
 
-new ParallaxSection("#trekking-a-cavallo", -0.1, 1.5, "left");
-new ParallaxSection("#pony-game", -0.1, 1.7);
-new ParallaxSection("#corsi-equitazione", -0.1, 1.2);
-new ParallaxSection("#valle-arroscia", -0.1, 1.5);
+new ParallaxSection("#trekking-a-cavallo", -0.1, 1, "right");
+new ParallaxSection("#pony-game", -0.1, 1, "left");
+new ParallaxSection("#corsi-equitazione", -0.1, 1, "right");
+new ParallaxSection("#valle-arroscia", -0.1, 1, "left");
 
 /***/ }),
 /* 7 */

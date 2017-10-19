@@ -1,21 +1,13 @@
 class ParallaxSection{
 
-	constructor(sectionID, bgSpeed, contentSpeed, contentDirection){
+	constructor(sectionID, bgSpeed, contentSpeed, contentSide){
 		this.section = $(sectionID);
 		this.bgSpeed = bgSpeed;
 		this.content = this.section.find(".full-image-section__content");
-		this.contentDirection = contentDirection;
+		this.contentSide = contentSide;
 		this.contentSpeed = contentSpeed;
 
 		this.events();
-		this.init();
-	}
-
-	init()
-	{
-		if(this.contentDirection === "left")
-		{
-		}
 	}
 
 	events()
@@ -23,37 +15,34 @@ class ParallaxSection{
 		//makes sure the parallax acts on a layout already set 
 		//by forcing resize and scroll before triggering the effect
 		$(window).trigger('resize').trigger('scroll');
-		$(window).scroll(this.triggerParallax.bind(this));
+		$(window).scroll(this.moveBg.bind(this));
+		$(window).scroll(this.moveContent.bind(this));
 	}
 
-	triggerParallax()
+	moveBg()
 	{
 		var newPos = parseInt($(window).scrollTop() - this.section.position().top);
 
 		if($(window).width() >= 800)
 			this.section.css("background-position", "center " + newPos * this.bgSpeed + "px");
-		
-		if(Math.abs(parseInt(this.content.css("margin-" + this.contentDirection))) < this.content.width())
-		{
-			this.content.css("margin-" + this.contentDirection, newPos*2 + "px");
-		}
-		else
-			this.content.css("margin-" + this.contentDirection, -newPos*2 + "px");
+	}
 
-		// if(this.contentDirection === "left")
-		// 	this.content.css("margin-" + this.contentDirection, - newPos*2 + "px");	
-		// else if(this.contentDirection === "center")
-		//this.content.css("top", this.section.height()/2 - this.content.height()/2 + newPos * this.contentSpeed + "px");	
+	moveContent()
+	{
+		var newPos = parseInt($(window).scrollTop() - this.section.position().top);
+
+		if (this.contentSide === "left" || this.contentSide === "right")
+		{
+			var contentLatPos = Math.min(0, -Math.abs(newPos + $(".navbar").height()));
+			this.content.css(this.contentSide, contentLatPos + "px");
+		}
+
+		this.content.css("top", this.section.height()/2 - this.content.height()/2 + newPos * this.contentSpeed + "px");	
 	}
 }
 
-
-new ParallaxSection("#trekking-a-cavallo", -0.1, 1.5, "left");
-new ParallaxSection("#pony-game", -0.1, 1.7);
-new ParallaxSection("#corsi-equitazione", -0.1, 1.2);
-new ParallaxSection("#valle-arroscia", -0.1, 1.5);
-
-
-
-
+new ParallaxSection("#trekking-a-cavallo", -0.1, 1, "right");
+new ParallaxSection("#pony-game", -0.1, 1, "left");
+new ParallaxSection("#corsi-equitazione", -0.1, 1, "right");
+new ParallaxSection("#valle-arroscia", -0.1, 1, "left");
 
