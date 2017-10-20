@@ -12671,32 +12671,43 @@ var ParallaxSection = function () {
 		this.content = this.section.find(".full-image-section__content");
 		this.contentSide = contentSide;
 		this.contentSpeed = contentSpeed;
+		this.contentMargin = 5;
 
+		this.init();
 		this.events();
 	}
 
 	_createClass(ParallaxSection, [{
-		key: 'events',
+		key: "init",
+		value: function init() {
+			if (this.contentSide !== "center" && $(window).width() >= 800) this.content.addClass("full-image-section__content--slidein");else {
+				this.content.removeClass("full-image-section__content--slidein");
+				this.content.css("left", 0);
+			}
+		}
+	}, {
+		key: "events",
 		value: function events() {
 			//makes sure the parallax acts on a layout already set 
 			//by forcing resize and scroll before triggering the effect
 			$(window).trigger('resize').trigger('scroll');
+			$(window).resize(this.init.bind(this));
 			$(window).scroll(this.moveBg.bind(this));
 			$(window).scroll(this.moveContent.bind(this));
 		}
 	}, {
-		key: 'moveBg',
+		key: "moveBg",
 		value: function moveBg() {
 			var newPos = parseInt($(window).scrollTop() - this.section.position().top);
 
 			if ($(window).width() >= 800) this.section.css("background-position", "center " + newPos * this.bgSpeed + "px");
 		}
 	}, {
-		key: 'moveContent',
+		key: "moveContent",
 		value: function moveContent() {
 			var newPos = parseInt($(window).scrollTop() - this.section.position().top);
 
-			if (this.contentSide === "left" || this.contentSide === "right") {
+			if (this.contentSide !== "center" && $(window).width() >= 800) {
 				var contentLatPos = Math.min(0, -Math.abs(newPos + $(".navbar").height()));
 				this.content.css(this.contentSide, contentLatPos + "px");
 			}

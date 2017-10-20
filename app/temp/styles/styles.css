@@ -873,6 +873,7 @@ a:hover{
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+
 }
 
 @media (min-height: 800px) {
@@ -943,12 +944,9 @@ a:hover{
   color: #FFF919;
 }
 
-@media (min-width: 800px) {
-
-  .full-image-section__content--slidein {
-    width: 40%;
-    max-height: 500px;
-  }
+.full-image-section__content--slidein{
+  width:  40%;
+  max-height: 500px;
 }
 
 #trekking-a-cavallo.lazyloaded{

@@ -6,8 +6,21 @@ class ParallaxSection{
 		this.content = this.section.find(".full-image-section__content");
 		this.contentSide = contentSide;
 		this.contentSpeed = contentSpeed;
+		this.contentMargin = 5;
 
+		this.init();
 		this.events();
+	}
+
+	init()
+	{
+		if(this.contentSide !== "center" && $(window).width() >= 800)
+			this.content.addClass("full-image-section__content--slidein");
+		else
+		{	
+			this.content.removeClass("full-image-section__content--slidein");
+			this.content.css("left", 0);
+		}
 	}
 
 	events()
@@ -15,6 +28,7 @@ class ParallaxSection{
 		//makes sure the parallax acts on a layout already set 
 		//by forcing resize and scroll before triggering the effect
 		$(window).trigger('resize').trigger('scroll');
+		$(window).resize(this.init.bind(this));
 		$(window).scroll(this.moveBg.bind(this));
 		$(window).scroll(this.moveContent.bind(this));
 	}
@@ -31,7 +45,7 @@ class ParallaxSection{
 	{
 		var newPos = parseInt($(window).scrollTop() - this.section.position().top);
 
-		if (this.contentSide === "left" || this.contentSide === "right")
+		if (this.contentSide !== "center" && $(window).width() >= 800)
 		{
 			var contentLatPos = Math.min(0, -Math.abs(newPos + $(".navbar").height()));
 			this.content.css(this.contentSide, contentLatPos + "px");
