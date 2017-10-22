@@ -68,8 +68,17 @@
     }
 
     &__content--slidein{
-        width:  40%;
-        max-height: 500px;
+        width:  50%;
+
+        @mixin atSmall{
+            height: 100%;
+        }
+
+        @mixin atMedium{
+            height: auto;
+            max-height: 500px;
+        }
+                
     }
 
 }

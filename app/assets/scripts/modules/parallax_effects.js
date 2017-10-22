@@ -15,11 +15,14 @@ class ParallaxSection{
 	init()
 	{
 		if(this.contentSide !== "center" && $(window).width() >= 800)
+		{
 			this.content.addClass("full-image-section__content--slidein");
+		}
 		else
 		{	
+			this.content.css("left", "auto");
+			this.content.css("right", "auto");
 			this.content.removeClass("full-image-section__content--slidein");
-			this.content.css("left", 0);
 		}
 	}
 

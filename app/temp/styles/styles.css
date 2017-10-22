@@ -945,8 +945,22 @@ a:hover{
 }
 
 .full-image-section__content--slidein{
-  width:  40%;
-  max-height: 500px;
+  width:  50%;
+}
+
+@media (min-width: 600px) {
+
+  .full-image-section__content--slidein {
+    height: 100%;
+  }
+}
+
+@media (min-width: 800px) {
+
+  .full-image-section__content--slidein {
+    height: auto;
+    max-height: 500px;
+  }
 }
 
 #trekking-a-cavallo.lazyloaded{
