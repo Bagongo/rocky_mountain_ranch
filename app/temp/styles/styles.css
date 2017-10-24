@@ -523,6 +523,10 @@ a:hover{
 	color: #FF7A23;
 }
 
+.section-box-shadowed{
+	box-shadow: 0 20px 5px black;
+}
+
 .section-title{
 	margin: 0;
 	padding: 1em;

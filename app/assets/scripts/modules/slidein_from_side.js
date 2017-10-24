@@ -4,8 +4,9 @@ class slideInElement{
 
 	constructor(element, parent, side){
 		this.element = element;
-		this.margin = "margin-" + side;
 		this.parent = parent;
+		this.margin = "margin-" + side;
+		this.stickOnScroll = true;
 
 		this.events();
 	}
@@ -28,9 +29,8 @@ class slideInElement{
 
 		if(newPos < 0)
 			this.element.css(this.margin, newPos + "px");
-		else
+		if(newPos > 0 && !this.stickOnScroll)
 			this.element.css(this.margin, -newPos + "px");
-
 	}
 
 }

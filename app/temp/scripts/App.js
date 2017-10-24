@@ -12671,6 +12671,7 @@ var ParallaxSection = function () {
 		this.content = this.section.find(".full-image-section__content");
 		this.contentSide = contentSide;
 		this.contentSpeed = contentSpeed;
+		this.stickOnScroll = true;
 		this.contentMargin = 5;
 
 		this.init();
@@ -12711,7 +12712,10 @@ var ParallaxSection = function () {
 			var newPos = parseInt($(window).scrollTop() - this.section.position().top);
 
 			if (this.contentSide !== "center" && $(window).width() >= 800) {
-				var contentLatPos = Math.min(0, -Math.abs(newPos + $(".navbar").height()));
+				var contentLatPos;
+
+				if (this.stickOnScroll) contentLatPos = Math.min(0, newPos + $(".navbar").height());else contentLatPos = Math.min(0, -Math.abs(newPos + $(".navbar").height()));
+
 				this.content.css(this.contentSide, contentLatPos + "px");
 			}
 
@@ -12723,8 +12727,8 @@ var ParallaxSection = function () {
 }();
 
 new ParallaxSection("#trekking-a-cavallo", -0.1, 1, "right");
-new ParallaxSection("#pony-game", -0.1, 1, "left");
-new ParallaxSection("#corsi-equitazione", -0.1, 1, "right");
+new ParallaxSection("#corsi-equitazione", -0.1, 1, "left");
+new ParallaxSection("#pony-game", -0.1, 1, "right");
 new ParallaxSection("#valle-arroscia", -0.1, 1, "left");
 
 /***/ }),
@@ -12745,8 +12749,9 @@ var slideInElement = function () {
 		_classCallCheck(this, slideInElement);
 
 		this.element = element;
-		this.margin = "margin-" + side;
 		this.parent = parent;
+		this.margin = "margin-" + side;
+		this.stickOnScroll = true;
 
 		this.events();
 	}
@@ -12767,7 +12772,8 @@ var slideInElement = function () {
 			var newPos = parseInt($(window).scrollTop() - this.parent.position().top);
 			var elementMargin = parseInt(this.element.css(this.margin));
 
-			if (newPos < 0) this.element.css(this.margin, newPos + "px");else this.element.css(this.margin, -newPos + "px");
+			if (newPos < 0) this.element.css(this.margin, newPos + "px");
+			if (newPos > 0 && !this.stickOnScroll) this.element.css(this.margin, -newPos + "px");
 		}
 	}]);
 

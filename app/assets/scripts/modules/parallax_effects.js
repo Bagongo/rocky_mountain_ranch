@@ -6,6 +6,7 @@ class ParallaxSection{
 		this.content = this.section.find(".full-image-section__content");
 		this.contentSide = contentSide;
 		this.contentSpeed = contentSpeed;
+		this.stickOnScroll = true;
 		this.contentMargin = 5;
 
 		this.init();
@@ -50,7 +51,13 @@ class ParallaxSection{
 
 		if (this.contentSide !== "center" && $(window).width() >= 800)
 		{
-			var contentLatPos = Math.min(0, -Math.abs(newPos + $(".navbar").height()));
+			var contentLatPos;
+
+			if(this.stickOnScroll)
+				contentLatPos = Math.min(0, newPos + $(".navbar").height());
+			else
+				contentLatPos = Math.min(0, -Math.abs(newPos + $(".navbar").height()));
+
 			this.content.css(this.contentSide, contentLatPos + "px");
 		}
 
@@ -59,7 +66,8 @@ class ParallaxSection{
 }
 
 new ParallaxSection("#trekking-a-cavallo", -0.1, 1, "right");
-new ParallaxSection("#pony-game", -0.1, 1, "left");
-new ParallaxSection("#corsi-equitazione", -0.1, 1, "right");
+new ParallaxSection("#corsi-equitazione", -0.1, 1, "left");
+new ParallaxSection("#pony-game", -0.1, 1, "right");
 new ParallaxSection("#valle-arroscia", -0.1, 1, "left");
+
 
