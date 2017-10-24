@@ -77,10 +77,8 @@
         @mixin atMedium{
             height: auto;
             max-height: 500px;
-        }
-                
+        }            
     }
-
 }
 
 #trekking-a-cavallo.lazyloaded{
