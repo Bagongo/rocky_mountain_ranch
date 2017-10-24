@@ -61,7 +61,7 @@ class ParallaxSection{
 			this.content.css(this.contentSide, contentLatPos + "px");
 		}
 
-		this.content.css("top", this.section.height()/2 - this.content.height()/2 + newPos * this.contentSpeed + "px");	
+		this.content.css("top", Math.round(this.section.height()/2 - this.content.height()/2 + newPos * this.contentSpeed) + "px");	
 	}
 }
 
