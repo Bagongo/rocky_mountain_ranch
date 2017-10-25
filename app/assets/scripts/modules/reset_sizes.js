@@ -1,5 +1,4 @@
 $(window).on("resize", function(){
-
 	var windowH = $(window).height(); 
 	var topnavH = $(".navbar").height();
 	var newSectionH = windowH - topnavH;

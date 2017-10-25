@@ -18,12 +18,14 @@ class ParallaxSection{
 		if(this.contentSide !== "center" && $(window).width() >= 800)
 		{
 			this.content.addClass("full-image-section__content--slidein");
+			this.contentSpeed = 0;
 		}
 		else
 		{	
 			this.content.css("left", "auto");
 			this.content.css("right", "auto");
 			this.content.removeClass("full-image-section__content--slidein");
+			this.contentSpeed = 1;
 		}
 	}
 
@@ -54,20 +56,20 @@ class ParallaxSection{
 			var contentLatPos;
 
 			if(this.stickOnScroll)
-				contentLatPos = Math.min(0, newPos + $(".navbar").height());
+				contentLatPos = Math.min(- this.contentMargin, newPos + $(".navbar").height());
 			else
-				contentLatPos = Math.min(0, -Math.abs(newPos + $(".navbar").height()));
+				contentLatPos = Math.min(- this.contentMargin, -Math.abs(newPos + $(".navbar").height()));
 
 			this.content.css(this.contentSide, contentLatPos + "px");
 		}
-
-		this.content.css("top", Math.round(this.section.height()/2 - this.content.height()/2 + newPos * this.contentSpeed) + "px");	
+		
+		this.content.css("top", Math.round(this.section.height()/2  - this.content.height()/2 + newPos * this.contentSpeed) + "px");	
 	}
 }
 
 new ParallaxSection("#trekking-a-cavallo", -0.1, 1, "right");
-new ParallaxSection("#corsi-equitazione", -0.1, 1, "left");
-new ParallaxSection("#pony-game", -0.1, 1, "right");
-new ParallaxSection("#valle-arroscia", -0.1, 1, "left");
+new ParallaxSection("#corsi-equitazione", -0.1, 0, "left");
+new ParallaxSection("#pony-game", -0.1, 0, "right");
+new ParallaxSection("#valle-arroscia", -0.1, 0, "left");
 
 

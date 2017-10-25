@@ -1,4 +1,5 @@
 .descriptive-section{
+	z-index: 1;
 	display: flex;
 	flex-flow: column;
 	
@@ -89,10 +90,10 @@
 		@mixin atMedium{
 			width: 50%;
 			height: 100%;
-			border: 15px solid black;
-			border-right: none;
 			/* border-top: none;
-			border-left:  15px solid black; */
+			border-bottom: none; */
+			border-left: 15px solid black;
+			border-right: none;
 		}
 	}
 
@@ -100,10 +101,8 @@
 		
 		@mixin atMedium{
 			order: 1;
-			border: 15px solid black;
+			border-right: 15px solid black;
 			border-left: none;
-			/* border-left:  none;
-			border-right: 15px solid black; */
 		}
 	}
 }

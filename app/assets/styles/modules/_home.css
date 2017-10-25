@@ -1,4 +1,5 @@
 .home-section{
+	z-index: 1;
 	background-image:url('../../assets/images/staple_wall--600X400.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
